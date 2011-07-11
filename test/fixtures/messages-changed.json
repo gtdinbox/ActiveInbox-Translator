@@ -1,0 +1,47 @@
+{
+	"Box.about.blog": {
+			"message": "Latest News"
+	},
+	"Box.about.support": {
+			"message": "Help"
+	},
+	"Box.about.supportpage": {
+			"message": "Support and Community Overview"
+	},
+	"Box.about.share": {
+			"message": "Share ActiveInbox"
+	},
+	"Box.about.gettingstarted": {
+			"message": "Get Started with the Quick Guide"
+	},
+	"Box.about.workflow": {
+			"message": "Read the Full Better Gmail Guide"
+	},
+  "Box.about.forum": {
+          "message": "Share questions and ideas in the Community Forum"
+  },
+  "Box.about.welcometour": {
+          "message": "Re-run the Welcome Tour"
+  },
+	"Box.about.preferences": {
+			"message": "Preferences"
+	},
+	"Box.about.manageaccount": {
+			"message": "Manage account"
+	},
+	"Box.about.learnplus": {
+			"message": "Learn about Plus"
+	},
+	"Box.about.discoverpremium": {
+			"message": "Buy Plus"
+	},
+	"Box.expander.boxaboutz": {
+			"message": "About"
+	},
+	"Box.about.legalnotice": {
+			"message": "Legal Notice"
+	},
+	"Box.about.versioninfo.beta": {
+			"message": "Gamma"
+	}
+}
