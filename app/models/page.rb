@@ -1,8 +1,10 @@
 class Page < ActiveRecord::Base
   include GtdInboxSyncable
 
-  sync_values_of(:name, :content) do
+  belongs_to :locale
 
+
+  sync_values_of(:name, :content) do
     GtdInboxRepo.pull
 
     page_dir = File.dirname(Rails.configuration.gtdinbox_message_file)

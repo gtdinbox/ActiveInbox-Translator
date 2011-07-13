@@ -8,6 +8,9 @@ conf.gtdinbox_template_dir = conf.gtdinbox_repo_dir + "/content/locales/en_US"
 conf.gtdinbox_export_dir = Rails.root.to_s + "/public/exports"
 conf.gtdinbox_export_tmpdir = Rails.root.to_s + '/tmp/exports'
 
+if Locale.table_exists?
+  conf.gtdinbox_master_locale = Locale.find_by_is_master(true)
+end
 # required libraries
 
 require 'zip/zip'

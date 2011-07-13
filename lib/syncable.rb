@@ -1,5 +1,7 @@
+#
 # Mixin providing one way synchronisation capabilities 
 # to ActiveRecord models.
+#
 module GtdInboxSyncable
 
   def self.included(base)
@@ -12,6 +14,7 @@ module GtdInboxSyncable
       @sync_name_attribute = name_attribute
       @sync_value_attribute = value_attribute
       @sync_block = block
+      @master_locale = Locale.find_by_is_master(true)
     end
 
 
@@ -22,7 +25,11 @@ module GtdInboxSyncable
         sync_record(name, value)
       end
 
-      delete_condition = ["#{@sync_name_attribute} NOT IN (?) AND deleted = (?)",  name_values.keys, false]
+      delete_condition = [
+        "locale_id = ? AND #{@sync_name_attribute} NOT IN (?) AND deleted = ?",
+         @master_locale.id, name_values.keys, false
+      ]
+
       @sync_stats[:deleted] = self.update_all(["deleted = ?", true], delete_condition)
       @sync_stats
     end
@@ -38,11 +45,16 @@ module GtdInboxSyncable
     end
 
     def sync_record(name, value)
-      find_by_attr = "find_by_#{@sync_name_attribute}"
-      record = self.send(find_by_attr, name)
+      record = self.where(
+        @sync_name_attribute  => value,
+        :locale_id => @master_locale.id
+      ).first
 
       unless record
-        self.create(@sync_name_attribute => name, @sync_value_attribute => value)
+        self.create @sync_name_attribute => name,
+                    @sync_value_attribute => value,
+                    :locale_id => @master_locale.id
+
         @sync_stats[:created] += 1
       else
         if record.send(@sync_value_attribute) === value and not record.deleted
