@@ -1,79 +1,58 @@
 class Message < ActiveRecord::Base
-  include Grit
+  include GtdInboxSyncable
 
-  # Public:
-  #
-  # Synchronises the messages collection with the entries in the entries listed
-  # GtdInbox code repository file 'content/locals/en_US/messages.json'
-  #
-  # Returns a hash containing sincronisation statistics.
-  #
+  sync_values_of :name do
 
-  def self.sync
-    self.git_pull
-
+    GtdInboxRepo.pull
     message_filepath = Rails.configuration.gtdinbox_message_file
     message_file = File.open(message_filepath, 'r');
     messages = JSON.parse(message_file.read)
-    message_statuses = []
+    messages.each{|key,message_record|
+      messages[key] = message_record['message']
+    }
 
-    message_status_counts = {}
-
-    message_status_counts[:deleted] = Message.update_all ["deleted = ?", true], ["name NOT IN (?)", messages.keys ]
-
-    messages.each do |message_name, record|
-      status = self.sync_record(message_name, record['message'])
-      message_statuses.push(status)
-    end
-
-
-    message_statuses.uniq.each do |status|
-      message_status_counts[status] = message_statuses.grep(status).size
-    end
-
-    message_status_counts
+    messages
   end
 
 
-  private
-
-  #
-  # Updates the GtdInbox code repository by issuing a 'git pull' command
-  #
-  # Returns nothing.
-  #
-
-  def self.git_pull
-    repo_dir = Rails.configuration.gtdinbox_repo_dir
-    `cd #{repo_dir} && git pull origin master`
-  end
-
-  #
-  # Syncronises a message record to a provided value.
-  #
-  # name  - The message name.
-  # value - The message value.
-  #
-  # Returns a label representing the db operation performed
-  #         on the record (valid values are :created, :updated, :identical)
-  #
+  # delete me!
+  def self.deprecated_export()
+    export_dir = Rails.configuration.gtdinbox_export_dir
+    bundle_filename = "#{export_dir}/#{Time.now.to_i}-export.zip"
+    message_filepath = Rails.root.to_s + '/tmp/messages.json'
+    messages = {}
 
 
-  def self.sync_record(name, value)
-    message = Message.find_by_name(name)
+    Message.where("deleted = ?", false).each {|record|  messages[record.name] = {:message => record.value}}
 
-    unless message
-      Message.create :name => name, :value => value
-      return :created
+    file = File.open(message_filepath, 'w')
+    file.write(JSON.pretty_generate(messages))
+    file.close
+
+    Zip::ZipFile.open(bundle_filename, Zip::ZipFile::CREATE) do  |zipfile|
+      zipfile.mkdir('en_US')
+      zipfile.add( "en_US/messages.json", message_filepath)
     end
 
-    if message.value == value.to_s
-      return :identical
-
-    else
-      message.value = value
-      message.save
-      return :updated
-    end
+    File.chmod(0644, bundle_filename)
+    FileUtils.remove(message_filepath)
+    bundle_filename
   end
+
+
+  def self.export(export_id=Time.now.to_i, locale='en_US')
+    message_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale}-#{export_id}-messages.json"
+    messages = {}
+    Message.where("deleted = ?", false).each {|record|  messages[record.name] = {:message => record.value}}
+
+    file = File.open(message_filepath, 'w')
+    file.write(JSON.pretty_generate(messages))
+    file.close
+
+    [[locale, file]]
+  end
+
+
+
+
 end

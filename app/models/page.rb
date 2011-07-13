@@ -1,53 +1,36 @@
 class Page < ActiveRecord::Base
+  include GtdInboxSyncable
 
-  #
-  # Public:
-  #
-  # Synchronise the pages table with
-  # the content of the HTML files in the repository
-  # directory 'content/locals/en_US'
-  #
-  # Returns a hash containing the counts of the updated, created, and deleted pages.
-  #
+  sync_values_of(:name, :content) do
 
-  def self.sync
+    GtdInboxRepo.pull
+
     page_dir = File.dirname(Rails.configuration.gtdinbox_message_file)
-    stats = {}
-    statuses = []
-    pagenames = []
+    file_paths = Dir["#{page_dir}/*.{html,htm}"]
+    file_contents = {}
 
-    Dir["#{page_dir}/*.{html,htm}"].each do |filepath|
-      statuses.push(self.sync_page(filepath))
-      filenames.push(File.basename(filepath))
+    file_paths.each do |filepath|
+      file_contents[File.basename(filepath)] =  File.open(filepath, "r").read
     end
 
-    stats[:deleted] =
-      Page.update_all ["deleted = ?", true], ["name NOT IN (?)", pagenames]
+    file_contents
+  end
 
-    statuses.uniq.each do |status|
-      stats[status] = statuses.grep(status).size
+  def self.export(export_id=Time.now.to_i, locale='en_US')
+    export_data = []
+
+    Page.where("deleted = ?", false).each do |page|
+      page_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale}-#{export_id}-#{page.name}"
+
+      file = File.open(page_filepath, 'w')
+      file.write(page.content)
+      file.close
+
+      export_data.push([locale, file])
     end
 
-    stats
+    export_data
   end
 
 
-  def self.sync_page(filepath)
-    file = File.open(filepath, 'r')
-    basename = File.basename(filepath)
-    file_content = file.read
-    page = Page.find_by_name(basename)
-
-    unless page
-      Page.create :name => basename, :content => file_content
-      return :created
-    end
-
-    if page.content === file.content
-      return :identical
-    else
-      return :updated
-    end
-    file.close
-  end
 end
