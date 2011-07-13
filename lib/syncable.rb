@@ -14,7 +14,7 @@ module GtdInboxSyncable
       @sync_name_attribute = name_attribute
       @sync_value_attribute = value_attribute
       @sync_block = block
-      @master_locale = Locale.find_by_is_master(true)
+      @master_locale = Rails.configuration.gtdinbox_master_locale
     end
 
 

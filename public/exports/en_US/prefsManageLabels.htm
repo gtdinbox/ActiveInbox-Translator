@@ -1,0 +1,229 @@
+<div id="gtdi-prefsmanagelabels-root">
+    
+    
+    <div id='gtdi-prefsmanagelabels-logo'>
+        <img geturl='1' src='skin/ActiveInbox-icon-48.png' />
+        <h2>
+            <a id="gtdi-prefsmanagelabels-back" href="#" onclick="return false;">Preferences</a> - ActiveInbox Label Types
+        </h2>
+    </div>
+    
+    <div id="gtdi-prefsmanagelabels-refreshgmail" style="display:none">
+        <span id="gtdi-prefsmanagelabels-refreshgmail-link">Reload Gmail for your changes to take effect</span>
+    </div>
+    
+    
+    <div id="gtdi-prefsmanagelabels-tabs">
+        <div class="gtdi-prefsmanagelabels-tab">Overview</div>
+    </div>
+    <div id="gtdi-prefsmanagelabels-viewport">
+        
+    </div>
+    
+    
+    <div class="gtdi-prefsmanagelabels-intro">
+        <h3>What are Label Types in ActiveInbox?</h3>
+        <p>ActiveInbox groups labels that have a specific meaning (e.g. Status labels, Project labels, etc.), simply by giving them
+        a prefix (e.g. 'P/' for Projects - you can change this).</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div id="gtdi-prefsmanagelabels-viewport-templates" style="display:none">
+        <!--
+        The following DIVs are all templates, dropped into the viewport (gtdi-prefsmanagelabels-viewport) when needed.
+        The app decided which one to use (e.g. Statuses might use prefix, but not migrate), and tailors them to each label type (e.g. injecting words like "Projects").
+        -->
+        
+        <div id="gtdi-prefsmanagelabels-viewport-templates-overview">
+            <div id="gtdi-pref-labelcategoriescontainer">
+      
+                <h3>Label Types in ActiveInbox:</h3>
+                <ul id="gtdi-pref-labelcategoriescontainer-categories">
+                  <li>
+                    <span class="gtdi-prefix">P/</span>
+                    <span class="gtdi-pref-labelcategory">Projects</span>
+                    <span class="gtdi-remove">Remove category</span>            
+                  </li>
+                  <li>
+                    <span class="gtdi-prefix">C/</span>
+                    <span class="gtdi-pref-labelcategory">Contexts</span>
+                    <span class="gtdi-remove">Remove category</span>            
+                  </li>     
+                    
+                  <li>
+                    
+                  </li>
+                </ul>
+                
+                <h3>Add a New Type:</h3>
+                
+                <div>
+                    <span class="gtdi-pref-labelcategories-add">Add a new Label Type</span>
+                </div>
+                
+                
+                  
+                <div id="gtdi-pref-labelcategories-create">
+                    <h3>Suggested Label Types:</h3>
+                    <ul>
+                        <li>
+                            <span class="gtdi-pref-labelcategories-createcategory-add" create-prefix="C/" create-name="Contexts">Add</span>
+                            <h4 class="gtdi-pref-labelcategories-createcategory">Contexts (C/) </h4>
+                            <p>Places/people for which to get emails done. E.g. all emails requiring a phone call might be in C/Call, everything for the office might be C/Office, and all emails for a VIP customer might be in 'C/Bob Smith'.</p>
+                        </li>
+                        <!--
+                        <li style="display:none">
+                            <span class="gtdi-pref-labelcategories-createcategory-add">Add</span>
+                            <h4 class="gtdi-pref-labelcategories-createcategory" create-prefix="R/" create-name="References">References (R/) </h4>
+                            <p>Useful types of information (e.g. R/Invoices, R/Meeting Notes)</p>
+                        </li>
+                        -->
+                        <li>
+                            <span class="gtdi-pref-labelcategories-createcategory-add" create-prefix="U/" create-name="Users">Add</span>
+                            <h4 class="gtdi-pref-labelcategories-createcategory">Users (U/) </h4>
+                            <p>Share an inbox with a team? Perhaps for customer support. Delegate emails to a co-worker with user labels (e.g. U/Bob, U/Sue, U/Rita).</p>
+                        </li>
+                        <li>
+                            <span class="gtdi-pref-labelcategories-createcategory-add" create-prefix="T/" create-name="Time">Add</span>
+                            <h4 class="gtdi-pref-labelcategories-createcategory">Time (T/) </h4>
+                            <p>Retrieve emails based on how long you think they'll take with time labels (e.g. T/5m T/15m T/1hr).</p>
+                        </li>
+                        <li>
+                            <span class="gtdi-pref-labelcategories-createcategory-add" create-prefix="SA/" create-name="Announcements">Add</span>
+                            <h4 class="gtdi-pref-labelcategories-createcategory">Announcements (SA/)</h4>
+                            <p>
+                                Set up labels for service announcements (e.g. SA/Facebook, SA/Twitter/yourusername, SA/LinkedIn), and then create Gmail filters to move these announcements straight into those labels and bypass your inbox, so you can keep your inbox empty and find announcements when you need them.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div id="gtdi-prefsmanagelabels-viewport-templates-prefix">
+            <div id='gtdi-prefsmanagelabels-prefix-container'>
+                <h3>Change the label prefix for <span class="gtdi-prefsmanagelabels-prefix-labeltype"></span> (advanced)</h3>
+                <table>
+                  <tr>
+                    <th>Current Prefix</th>
+                    <td><span class="gtdi-prefsmanagelabels-prefix-currentprefix"></span></td>
+                  </tr>
+                  <tr>
+                    <th>New Prefix</th>
+                    <td><input type="text" id="gtdi-prefsmanagelabels-prefix-input" /></td>
+                  </tr>
+                </table>
+                <div id="gtdi-prefsmanagelabels-prefix-rename-container">
+                    Labels that will have the new prefix:
+                    <table id="gtdi-prefsmanagelabels-prefix-rename-table">
+                        <tr gtdi-donotremove='1'>
+                            <th></th>
+                            <th>Current Label:</th>
+                            <th>After Change:</th>
+                        </tr>
+                        <!-- The following are examples: -->
+                        <tr class="gtdi-prefsmanagelabels-prefix-rename-label gtdi-prefsmanagelabels-prefix-rename-label-disabled" >
+                            <td><input type='checkbox' disabled=true/><td/>
+                            <td>S/Action</td>
+                            <td>Ss/Action <span class='gtdi-prefsmanagelabels-prefix-rename-label-alreadyexists'>Proposed label already exists, cannot rename</span></td>
+                        </tr>
+                        <tr class="gtdi-prefsmanagelabels-prefix-rename-label gtdi-prefsmanagelabels-prefix-rename-label-existingnewprefixlabel" >
+                            <td><td/>
+                            <td></td>
+                            <td>Ss/Action</td>
+                        </tr>
+                        
+                    </table>
+                    <button class='gtdi-prefsmanagelabels-prefix-rename-submit'>Save Prefix (and rename any selected labels)</button>
+                </div>
+                <button class='gtdi-prefsmanagelabels-prefix-submit'>Save Prefix</button>
+            </div>
+            
+        </div>
+        
+        <div id="gtdi-prefsmanagelabels-viewport-templates-migrate">
+            <div id='gtdi-prefsmanagelabels-migrate-container'>
+                <h3>Turn existing labels into <span class="gtdi-prefsmanagelabels-migrate-labeltype"></span></h3>
+                
+                <div id="gtdi-prefsmanagelabels-migrate-rename-container">
+                    Choose labels to make <span class="gtdi-prefsmanagelabels-migrate-labeltype"></span> by giving them a prefix:
+                    <table id="gtdi-prefsmanagelabels-migrate-rename-table">
+                        <tr gtdi-donotremove='1'>
+                            <th></th>
+                            <th>Existing Label:</th>
+                            <th>Will Become:</th>
+                        </tr>
+                    </table>
+                    <button class='gtdi-prefsmanagelabels-migrate-rename-submit'>Rename Selected Labels</span></button>
+                </div>
+                
+                <h4>Can I undo this?</h4>
+                <p>
+                    Yes, just go into Gmail's Settings and rename the labels to remove the label prefix that ActiveInbox adds.
+                </p>
+            </div>
+            
+        </div>
+        
+        
+        <div id="gtdi-prefsmanagelabels-viewport-templates-corestatuses">
+            <div id='gtdi-prefsmanagelabels-corestatuses-container'>
+                <h3>Status Label Preferences</h3> 
+                    
+                <div class='gtdi-pref-feature'>
+                    <label><input type="checkbox" gtdi-preference="gtd.allow_multiple_statuses" /> Allow Multiple Statuses (so emails can have more than one status at once)</label>
+                </div>
+                
+                <div class='gtdi-pref-feature'>
+                    <label><input type="checkbox" gtdi-preference="gtd.labels.types.statuses.use_star_as_status" /> Include Gmail's Star as a Status (starred items will appear in the ActiveInbox Sidebar)</label>
+                </div>
+                
+                <div id="gtdi-pref-statuslabelscontainer">
+                    
+                    <h3 for="gtdi-pref-statuslabelscontainer-statuslabels">Special Status Labels</h3>
+                    
+                    
+                    <table id="gtdi-pref-statuslabelscontainer-statuslabels">
+                        <tr gtdi-donotremove='1'>
+                            <th>Status Name:</th>
+                            <th>Expected Label:</th>
+                        </tr>
+                        <tr>
+                            <td>Next</td>
+                            <td>
+                                <span class='gtdi-pref-statuslabelscontainer-labelprefix'>S/</span>
+                                <input type='text'/>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <h3>What are Special Status Labels?</h3>
+                    <p class="gtdi-pref-smallnote">
+                        You can create any Status labels you want in Gmail using the Status prefix (S/ by default).
+                        However, there are 5 Statuses with special meaning in ActiveInbox (e.g. you are 'waiting on' something), and if you want to change the names of these labels in Gmail, you must
+                        tell ActiveInbox the new label name to look for and use, using the textboxes here. (Note that you do not have to use any of these special labels; you can safely delete them from Gmail and ActiveInbox will still work).
+                    </p>
+                    
+                    <!--
+                    <select id="gtdi-pref-statuslabelscontainer-statuslabels" size="6">        </select>
+                    <div id="gtdi-pref-statuslabelscontainer-labelcontainer" class="gtdi-pref-textboxcontainer">
+                    <label>Status Label:</label>
+                    <span id="gtdi-pref-statuslabelscontainer-labelprefix"></span>
+                    <input type="text" id="gtdi-pref-statuslabelscontainer-label" />
+                    <div id="gtdi-pref-statuslabelscontainer-labelfound" style="display:none">You have this label!</div>
+                    <div id="gtdi-pref-statuslabelscontainer-labelnotfound" style="display:none">This label is not in your Gmail.</div>
+                    </div>
+                    -->
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

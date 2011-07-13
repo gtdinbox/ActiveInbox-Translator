@@ -1,0 +1,291 @@
+
+
+<div id="preferences-pane">
+	<h1>ActiveInbox Preferences</h1>    
+    
+    
+    <div id="gtdi-aib-plus" class="gtdi-pref-section" style="text-align:center">
+        <h2>Never waste a minute with ActiveInbox <span class="gtdi-plus">Plus</span></h2>
+        <p style="display:none">Spend less time in email with Scheduling, make the most of inspired moments with 'Reply to Self' and use advanced workflow features to glide through email faster.</p>
+        <p>
+            <a id='gtdi-discover-aib-plus' href="" target="_blank" >Learn about ActiveInbox Plus</a>
+        </p>
+    </div>
+    
+    <div class="gtdi-pref-section" id="gtdi-pref-section-features">
+    
+      <h2>Features</h2> <!-- Features Section -->
+      
+      <h3>Look &amp; Feel</h3>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="box.header.visible" /> Show the ActiveInbox logo in the Sidebar</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="box.header.highlight_change" /> Visually highlight the ActiveInbox logo when you mouseover an ActiveInbox feature in Gmail</label>
+      </div>
+      
+      <h3>Organize Your Email</h3>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.status_labeling.enabled" /> Give Emails Status</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.header_filebutton.enabled" /> ActiveInbox 'File' Button in Header</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.hab.enabled" /> Horizontal Action Bar in Conversations</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.hab_1.enabled" /> Classic Horizontal Action Bar in Conversations</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.conversationsidebar.enabled" /> Right Hand Conversation Sidebar in Conversations</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.compose_prelabel.enabled" /> Label Emails as you Compose Mail</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.compose_self.enabled" /> Compose Self to send memo/files to self</label>
+      </div>
+      
+      <div class='gtdi-pref-feature gtdi-feature-plus'>
+          <label><input type="checkbox" gtdi-is-plus='1' gtdi-preference="gtd.components.deadline_labeling.enabled" /> Postpone &amp; Deadline Emails</label>
+      </div>
+      <div class='gtdi-pref-feature gtdi-feature-plus'>
+          <label><input type="checkbox" gtdi-is-plus='1' gtdi-preference="gtd.components.replytoself.enabled" /> Reply to Self to add background notes</label>
+      </div>
+      <div class='gtdi-pref-feature gtdi-feature-plus'>
+          <label><input type="checkbox" gtdi-is-plus='1' gtdi-preference="gtd.components.powersend.enabled" /> 'Send and File' to update categorization with every reply</label>
+      </div>
+      <div class='gtdi-pref-feature gtdi-feature-plus'>
+          <label><input type="checkbox" gtdi-is-plus='1' gtdi-preference="gtd.components.labeling_suggestions.enabled" /> Suggested labels to categorize faster</label>
+      </div>
+      
+      
+      <h3>General Time-Saving Features</h3>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.related_previousemails.enabled" /> 'Previous Emails' for Compose/Reply Recipients</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.related_browse.enabled" /> Browse Related Emails in Conversation</label>
+      </div>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.contextclick.contact.enabled" /> 'Contact History' Popup when Right Click a Contact</label>
+      </div>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.contextclick.preview.enabled" /> Preview Emails in Inbox and Search Results with Right Click</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.threadlist_icon.enabled" /> Cube Icon in Inbox and Search Results to Preview/Action Emails</label>
+      </div>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.compose_self.link.enabled" /> Compose Self link in main navigation bar</label>
+      </div>
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.components.hide_recent_labels.enabled" /> Toggle Gmail's Left-Hand 'Recent Labels' list</label>
+      </div>
+      
+      <div class='gtdi-pref-feature gtdi-feature-plus'>
+          <label><input type="checkbox" gtdi-is-plus='1' gtdi-preference="gtd.components.shortcuts.enabled" /> Shortcut buttons to speed up processing</label>
+      </div>
+      
+      
+      
+      <h3>Misc</h3>
+      <div class='gtdi-pref-feature'>
+          <input type="checkbox" gtdi-preference="do_not_show_error_monitor" /> <label>Hide the Sidebar's Error Reporter (and submit errors automatically)</label>
+      </div>
+    </div>    
+    
+    
+    <div class="gtdi-pref-section" id="gtdi-pref-section-categories">
+        <h2>ActiveInbox Label Types</h2>
+        <p>Click the button to manage label types (e.g. Statuses, Projects), change label prefixes, and edit the default Status labels (like S/Waiting On).</p>
+        <button id="gtdi-pref-editcategories">Configure Label Types</button>
+        
+    </div>
+    
+<div style="display:none">
+    <div class="gtdi-pref-section" id="gtdi-pref-section-categories">
+    <h2>Label Categories</h2> 
+    
+      <p class="subhead">
+          Group labels with a unique prefix for different purposes: projects, contexts, references, co-workers, time-taken, etc. 
+      </p>
+      
+      <h3>Your Categories</h3>
+      <div id="gtdi-pref-labelcategoriescontainer">
+      
+        <ul id="gtdi-pref-labelcategoriescontainer-categories">
+          <li>
+            <span class="gtdi-prefix">P/</span>
+            <span class="gtdi-pref-labelcategory">Projects</span>
+            <span class="gtdi-remove">Remove category</span>            
+          </li>
+          <li>
+            <span class="gtdi-prefix">C/</span>
+            <span class="gtdi-pref-labelcategory">Contexts</span>
+            <span class="gtdi-remove">Remove category</span>            
+          </li>     
+            
+          <li>
+            <!--
+            <label for="gtdi-pref-labelcategoriescontainer-category-5">Add a new category</label>
+            <input type="text" class="gtdi-prefix" id="gtdi-pref-labelcategoriescontainer-prefix-5" value="">
+            <input type="text" id="gtdi-pref-labelcategoriescontainer-category-5" value="">-->
+            
+          </li>
+        </ul>
+        <div>
+            <span class="gtdi-pref-labelcategories-add">Add a new category</span>
+        </div>
+        
+        <!--
+          <label for="gtdi-pref-labelcategoriescontainer-categories">Current categories:</label>       
+          <select id="gtdi-pref-labelcategoriescontainer-categories" size="6"></select>
+        	<button id="gtdi-pref-labelcategories-add">Add Category</button>
+          <button id="gtdi-pref-labelcategories-remove">Remove Category</button>
+          <div id="gtdi-pref-labelcategoriescontainer-prefixcontainer" class="gtdi-pref-textboxcontainer">
+              <label>Category Label Prefix:</label> <input type="text" id="gtdi-pref-labelcategoriescontainer-prefix" />
+          </div>
+        -->
+        <!--
+        <p class='gtdi-pref-smallnote'>
+            Changing prefixes will require you to manually rename labels in Gmail.
+        </p>
+        -->
+          
+        <div id="gtdi-pref-labelcategories-create">
+            <h3>Suggested Categories:</h3>
+            <ul>
+                <li>
+                    <h4 class="gtdi-pref-labelcategories-createcategory" create-prefix="C/" create-name="References">Contexts (C/) <span class="gtdi-pref-labelcategories-createcategory-add">Add</span></h4>
+                    <p>Places/people for which to get emails done. E.g. all emails requiring a phone call might be in C/Call, everything for the office might be C/Office, and all emails for a VIP customer might be in 'C/Bob Smith'.</p>
+                </li>
+                <li style="display:none">
+                    <h4 class="gtdi-pref-labelcategories-createcategory" create-prefix="R/" create-name="References">References (R/) <span class="gtdi-pref-labelcategories-createcategory-add">Add</span></h4>
+                    <p>Useful types of information (e.g. R/Invoices, R/Meeting Notes)</p>
+                </li>
+                <li>
+                    <h4 class="gtdi-pref-labelcategories-createcategory" create-prefix="U/" create-name="Users">Users (U/) <span class="gtdi-pref-labelcategories-createcategory-add">Add</span></h4>
+                    <p>Share an inbox with a team? Perhaps for customer support. Delegate emails to a co-worker with user labels (e.g. U/Bob, U/Sue, U/Rita).</p>
+                </li>
+                <li>
+                    <h4 class="gtdi-pref-labelcategories-createcategory" create-prefix="T/" create-name="Time">Time (T/) <span class="gtdi-pref-labelcategories-createcategory-add">Add</span></h4>
+                    <p>Retrieve emails based on how long you think they'll take with time labels (e.g. T/5m T/15m T/1hr).</p>
+                </li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="gtdi-pref-section" id="gtdi-pref-section-status">
+    
+      <h2>Manage Status Labels</h2> <!-- Status Labels Section -->
+              
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="gtd.allow_multiple_statuses" /> Allow Multiple Statuses (so emails can have more than one status at once)</label>
+      </div>
+      
+      <div class='gtdi-pref-feature'>
+          <label><input type="checkbox" gtdi-preference="labels.types.statuses.use_star_as_status" /> Include Gmail's Star as a Status (starred items will appear in the ActiveInbox Sidebar)</label>
+      </div>
+          
+      <div id="gtdi-pref-statuslabelscontainer">
+          
+          <h3 for="gtdi-pref-statuslabelscontainer-statuslabels">Special Status Labels</h3>
+          
+          <p class="gtdi-pref-smallnote">
+              You can create any Status labels you want in Gmail using the Status prefix (S/ by default).
+              However, there are 5 Statuses with special meaning in ActiveInbox (e.g. you are 'waiting on' something), and if you want to change the names of these labels in Gmail, you must
+              tell ActiveInbox the new label name to look for and use, using the textboxes below. (Note that you do not have to use any of these special labels; you can safely delete them from Gmail and ActiveInbox will still work).
+          </p>
+          
+          
+          <ul id="gtdi-pref-statuslabelscontainer-statuslabels">
+          <li>
+            <span class="gtdi-prefix">S/</span> <span class="gtdi-pref-statuslabel">Next</span>             
+          </li>  
+          <li>
+            <span class="gtdi-prefix">S/</span> <span class="gtdi-pref-statuslabel">Action</span>             
+          </li>
+          <li>
+            <span class="gtdi-prefix">S/</span> <span class="gtdi-pref-statuslabel">Waiting On</span>             
+          </li>
+          <li>
+            <span class="gtdi-prefix">S/</span> <span class="gtdi-pref-statuslabel">Finished</span>             
+          </li>
+          <li>
+            <span class="gtdi-prefix">S/</span> <span class="gtdi-pref-statuslabel">Old</span>             
+          </li>      
+            
+          <!--
+          <li>
+            <label for="gtdi-pref-statuslabelscontainer-category-5">Add a new satus</label>
+            <span class="gtdi-prefix">S/</span> <input type="text" id="gtdi-pref-statuslabelscontainer-category-5" value="">
+            <span class="gtdi-pref-add">Add</span>
+          </li>
+          -->
+        </ul>
+          
+          <!--
+            <select id="gtdi-pref-statuslabelscontainer-statuslabels" size="6">        </select>
+            <div id="gtdi-pref-statuslabelscontainer-labelcontainer" class="gtdi-pref-textboxcontainer">
+                <label>Status Label:</label>
+                <span id="gtdi-pref-statuslabelscontainer-labelprefix"></span>
+                <input type="text" id="gtdi-pref-statuslabelscontainer-label" />
+                <div id="gtdi-pref-statuslabelscontainer-labelfound" style="display:none">You have this label!</div>
+                <div id="gtdi-pref-statuslabelscontainer-labelnotfound" style="display:none">This label is not in your Gmail.</div>
+            </div>
+          -->
+          
+          <p>
+              Want to customize your Status labels? Perhaps you want to include the Gmail Star? Check out <a id="gtdi-pref-statuslabelscontainer-statushelp" href="">Turning Emails into Actions</a>.
+          </p>
+      </div>
+    
+    </div>
+</div>
+    
+    
+    <div class="gtdi-pref-section" id="gtdi-pref-section-account">
+      <h2>Your ActiveInbox <span class="gtdi-plus">Plus</span> Account</h2> <!-- ActiveInbox Account Section -->
+      
+      <div id="gtdi-pref-accountcontainer">
+          
+          <h3 id="gtdi-pref-accountcontainer-statuscontainer">
+              Account Status: <span id="gtdi-pref-accountcontainer-status"></span>
+          </h3>
+          
+          <h3>Register ActiveInbox Plus</h3>
+          <ul>
+            <li id="gtdi-pref-accountcontainer-passwordcontainer" class="gtdi-pref-textboxcontainer">
+                <label for="gtdi-pref-accountcontainer-password1">Enter your <em>ActiveInbox</em> password:</label> 
+                <input type="password" id="gtdi-pref-accountcontainer-password1" />
+            </li>
+            <li style="display:none" id="gtdi-pref-accountcontainer-passwordcontainer" class="gtdi-pref-textboxcontainer">
+                <label for="gtdi-pref-accountcontainer-password2">Confirm your password:</label> 
+                <input type="password" id="gtdi-pref-accountcontainer-password2" /> 
+                
+            </li>
+          </ul>
+          <p id="gtdi-pref-password-action"><button id="gtdi-pref-accountcontainer-passwordsave">Register ActiveInbox Plus</button> <a href="" id='gtdi-pref-accountcontainer-forgotpassword' target="_blank" >I have forgotten my password</a></p>
+          <p id="gtdi-pref-accountcontainer-getaccountnotice" class="gtdi-pref-smallprint">Don't have ActiveInbox Plus? <a href="" target="_blank" id="gtdi-pref-accountcontainer-getaccount" class="gtdi-pref-buy-plus">Buy ActiveInbox Plus</a></p>
+          
+      </div>
+    </div>
+    <div class="gtdi-pref-section" id="gtdi-pref-section-disable">  
+      <h2>Disable ActiveInbox for this Gmail Account</h2>
+      <p id="gtdi-pref-disableaibcontainer">You can disable ActiveInbox for a specific Gmail or Google Apps account that you use, leaving only the 'About' box on the sidebar (so that you can re-enable it later).</p>
+      <p>
+          <label><input type="checkbox" gtdi-preference="disabled" /> Disable ActiveInbox for <span id="gtdi-pref-disableaib-account"></span></label>
+      </p>
+    </div>
+    
+    
+</div>

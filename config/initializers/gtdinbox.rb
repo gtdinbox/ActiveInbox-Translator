@@ -24,7 +24,8 @@ require Rails.root.to_s + "/lib/zipbundler"
 
 # Default directories (to be created at runtime if they do not exist yet)
 
-[ conf.gtdinbox_export_dir, conf.gtdinbox_export_tmpdir].each do |dir|
+[ conf.gtdinbox_export_dir,
+  conf.gtdinbox_export_tmpdir].each do |dir|
   unless File.directory?(dir)
     Dir.mkdir(dir)
   end

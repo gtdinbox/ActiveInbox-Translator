@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <td>Message name </td>
+    <td>Message value [en_US]</td>
+    <td>Message value [locale]</td>
+  </thead>
+  <tbody>
+<% @messages.each do |message_name, message | %>
+   <tr class="bla">
+      <td><%= message_name %></td>
+      <td><%= message[:master_value] %></td>
+      <td><%= message[:locale_value] %></td>
+   </tr>
+<% end %>
+  </tbody>
+</table>

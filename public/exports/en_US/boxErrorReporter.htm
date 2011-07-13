@@ -1,0 +1,53 @@
+<div>
+    
+    
+    <h1>Send Us A Debug Report</h1>
+    
+    <div id="gtdi-boxerrorreporter-errors" class="gtdi-pref-section">
+            
+        <h2>ActiveInbox has detected the following internal errors:</h2>
+        
+        <div id='gtdi-boxerrorreporter-errors-container'>
+            <ul id='gtdi-boxerrorreporter-errors-list'>
+            </ul>
+        </div>
+        
+        <div id='gtdi-boxerrorreporter-errors-noerrors'>
+            No errors have yet been detected! (This means no specific error details will be sent to the team. If you're experiencing problems, perhaps return to this screen after the problem has occurred?)
+        </div>
+    </div>
+    
+    <div class="gtdi-pref-section">
+    
+    
+    <h3>Do you want to include a message about what you've observed and how to recreate it?</h3>
+    <p>
+        <textarea id='gtdi-boxerrorreporter-detail'></textarea>
+    </p>
+    <p id='gtdi-boxerrorreporter-report-guide'>
+        I cannot respond to every error report that comes in, but each one contributes to getting it fixed and released on the
+        <a href="http://www.activeinboxhq.com/blog/" target="_blank">blog</a> as quick as possible!
+    </p>
+    
+    <h3>Can we follow up if needed?</h3>
+    <p>
+        <input type="checkbox" id='gtdi-boxerrorreporter-includeemail' checked=true /> <label for='gtdi-boxerrorreporter-includeemail'>Include my email address (<span id='gtdi-boxerrorreporter-email'></span>) so the ActiveInbox team can follow up if needed.</label>
+    </p>
+    
+    <h3>Can we have a snapshot of your Gmail HTML?</h3>
+        <p><input type="checkbox" id='gtdi-boxerrorreporter-includehtml' checked=true /> Send Gmail Layout Information to the Team</p>
+        <p>
+            If you are helping us fix a problem, this takes a snapshot of your
+            current view of Gmail, to help us find unique changes in your version. We do everything possible to strip out
+            your personal information (like email addresses), but some things do slip through. To counter this, we delete
+            everything you submit as soon as we've finished analyzing it. If you're not comfortable, please do not check this (but it is EXTREMELY helpful!).
+        </p>
+    
+    
+    <div class='gtdi-boxerrorreporter-send-container'>
+        <button id='gtdi-boxerrorreporter-send'>Send to the Team</button>
+    </div>
+    
+    
+    
+</div>

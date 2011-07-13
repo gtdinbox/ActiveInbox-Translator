@@ -1,6 +1,8 @@
 class Message < ActiveRecord::Base
   include GtdInboxSyncable
 
+  @@master_locale = Rails.configuration.gtdinbox_master_locale
+
   belongs_to :locale
 
 
@@ -15,6 +17,40 @@ class Message < ActiveRecord::Base
     }
 
     messages
+  end
+
+  #
+  # Generates a list of messages organised by 
+  # message name, en_US value, current_local value
+  #
+  #
+  #
+  def self.locale_with_masterlist(locale_id)
+    @messages = {}
+
+    master_list = Message.select("name, value").
+                          where("locale_id = ?", @@master_locale.id)
+
+    locale_list = Message.select("name, value, in_sync").
+                          where("locale_id = ?", locale_id)
+
+
+    master_list.each do |message|
+      @messages[message.name] = {
+        :master_value => message.value,
+        :locale_value => nil,
+        :in_sync => nil
+      }
+    end
+    locale_list.each do |message|
+      @messages[message.name] = {
+        :locale_value => message.value,
+        :in_sync => message.in_sync
+      }
+    end
+
+
+    @messages
   end
 
 
