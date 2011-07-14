@@ -1,6 +1,12 @@
 ActiveInboxTranslator::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  match 'messages/:lang' => 'messages#create', :via => 'post', :as => 'messages'
+  match 'messages/:lang/:id' => 'messages#update', :via => 'put', :as => 'messages'
+  match 'messages(/:lang)' => 'messages#show', :via => 'get', :as => 'messages'
+
+
+  get "export" => "application#export_bundle"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -45,7 +51,6 @@ ActiveInboxTranslator::Application.routes.draw do
   #     resources :products
   #   end
 
-  resource :messages
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

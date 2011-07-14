@@ -3,6 +3,10 @@ class Page < ActiveRecord::Base
 
   belongs_to :locale
 
+  #
+  # Synchronizes the page records with the htm* files in the content/locale/en_US/
+  # folder of the Active inbox plugin code.
+  #
 
   sync_values_of(:name, :content) do
     GtdInboxRepo.pull
@@ -17,6 +21,18 @@ class Page < ActiveRecord::Base
 
     file_contents
   end
+
+  private
+
+  #
+  # Prepares the data for exporting page files into a locale zip bundle.
+  #
+  # export_id - The unique export identifier.
+  # locale - The language code of the exported locale.
+  #
+  # Returns:
+  #  An array of two value arrays containing the exported local as the first item, and the page's file file handle as the second one.
+  #
 
   def self.export(export_id=Time.now.to_i, locale='en_US')
     export_data = []

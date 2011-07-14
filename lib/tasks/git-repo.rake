@@ -24,7 +24,7 @@ namespace :gtdinbox do
   end
 
   task "export messages into a zip archive [new]"
-  task :proper_export_messages => :environment do
+  task :export_all => :environment do
     export_id=Time.now.to_i
     export_data = Message.export(export_id).concat(Page.export(export_id))
     bundler = ZipBundler.new(export_data, export_id)

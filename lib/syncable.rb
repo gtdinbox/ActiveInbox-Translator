@@ -1,3 +1,4 @@
+require 'ruby-debug'
 #
 # Mixin providing one way synchronisation capabilities 
 # to ActiveRecord models.
@@ -14,11 +15,12 @@ module GtdInboxSyncable
       @sync_name_attribute = name_attribute
       @sync_value_attribute = value_attribute
       @sync_block = block
-      @master_locale = Rails.configuration.gtdinbox_master_locale
     end
 
 
     def sync!
+      @master_locale = Rails.configuration.gtdinbox_master_locale
+
       reset_stats
       name_values = @sync_block.call
       name_values.each do |name, value|
@@ -46,7 +48,7 @@ module GtdInboxSyncable
 
     def sync_record(name, value)
       record = self.where(
-        @sync_name_attribute  => value,
+        @sync_name_attribute  => name,
         :locale_id => @master_locale.id
       ).first
 

@@ -1,0 +1,53 @@
+body {
+ font-family: sans;
+ margin: 3% 8%;;
+}
+
+#wrapper{
+  width: 100%;
+  overflow: hidden;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  margin: 0;
+}
+
+ul.locale-menu {
+  width: 5%;
+  font-size: small;
+  padding: 1em 0;
+}
+ul.locale-menu li {
+}
+
+
+ul.locale-menu li.active{
+  background: yellow;
+}
+div#main{
+  width: 88%;
+}
+ul.locale-menu, div#main {
+  float: left;
+}
+
+tr.message td.label {
+  font-size: small;
+  max-width: 25%;
+}
+
+tr.message td.master-value {
+  font-size: small;
+  max-width: 25%;
+}
+
+tr.message td.locale-value {
+  max-width: 35%;
+}
+tr.message td.locale-value input {
+  width: 23em;
+  border: 0;
+}
+

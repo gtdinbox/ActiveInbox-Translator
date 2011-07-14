@@ -7,8 +7,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+ <div id=wrapper>
+  <%= render :partial => 'layouts/locale-menu', :locals => {
+    :locales => locale_menu
+  } %>
+  <div id=main>
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

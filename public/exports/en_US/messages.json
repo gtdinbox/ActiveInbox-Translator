@@ -1,2 +1,1181 @@
 {
+  "Box.about.blog": {
+    "message": "dernieres news"
+  },
+  "Box.about.support": {
+    "message": "aide"
+  },
+  "Box.about.supportpage": {
+    "message": "Support de la communote"
+  },
+  "Box.about.share": {
+    "message": "Share ActiveInbox"
+  },
+  "Box.about.gettingstarted": {
+    "message": "Get Started with the Quick Guide"
+  },
+  "Box.about.workflow": {
+    "message": "Read the Full Better Gmail Guide"
+  },
+  "Box.about.forum": {
+    "message": "Share questions and ideas in the Community Forum"
+  },
+  "Box.about.welcometour": {
+    "message": "Re-run the Welcome Tour"
+  },
+  "Box.about.preferences": {
+    "message": "Preferences"
+  },
+  "Box.about.manageaccount": {
+    "message": "Manage account"
+  },
+  "Box.about.learnplus": {
+    "message": "Learn about Plus"
+  },
+  "Box.about.discoverpremium": {
+    "message": "Buy Plus"
+  },
+  "Box.expander.boxabout": {
+    "message": "About"
+  },
+  "Box.about.legalnotice": {
+    "message": "Legal Notice"
+  },
+  "Box.about.versioninfo.beta": {
+    "message": "Beta"
+  },
+  "Box.OfflineWarning": {
+    "message": "ActiveInbox is running with minimal features because Gmail is in Offline (Unstable) mode. "
+  },
+  "Box.LoadWarning.xhr": {
+    "message": "ActiveInbox could not reach Gmail due to browser security settings. To correct it please"
+  },
+  "Box.LoadWarning.xhr.faq": {
+    "message": "see the faq"
+  },
+  "News.blog.title": {
+    "message": "ActiveInbox Blog"
+  },
+  "News.blog.subscribe": {
+    "message": "Subscribe to blog news by email"
+  },
+  "News.blog.new.title": {
+    "message": "%1 new blog posts"
+  },
+  "News.twitter.title": {
+    "message": "ActiveInbox on Twitter"
+  },
+  "News.twitter.lastUpdate": {
+    "message": "Last updated"
+  },
+  "Support.forum.title": {
+    "message": "Community Forum Latest"
+  },
+  "Support.forum.link": {
+    "message": "visit the community forum"
+  },
+  "Box.error.notice.singular": {
+    "message": "1 warning has occurred."
+  },
+  "Box.error.notice": {
+    "message": "%1 warnings have occurred."
+  },
+  "Box.error.report": {
+    "message": "Send Us A Debug Report"
+  },
+  "Box.error.report.success": {
+    "message": "Thank you! The ActiveInbox team has received notification of your error report and will look into it as soon as possible."
+  },
+  "Box.error.report.fail": {
+    "message": "Oops! We could not send your error report to the ActiveInbox server. Please try again in a few moments. "
+  },
+  "Box.about.talktous": {
+    "message": "Contact the Team"
+  },
+  "Box.talkToUs.snapshotHTML.success": {
+    "message": "Thank you, the snapshot of your Gmail layout has been sent to the team."
+  },
+  "Box.talkToUs.snapshotHTML.fail": {
+    "message": "Oops! We could not send the snapshot of your Gmail layout to the ActiveInbox server. Please try again in a few moments."
+  },
+  "Box.About.Account.register": {
+    "message": "Register Plus"
+  },
+  "Box.About.Account.renew": {
+    "message": "Renew Plus"
+  },
+  "Box.About.Account.types.account_type_free": {
+    "message": "Free"
+  },
+  "Box.About.Account.types.account_type_plus": {
+    "message": "Plus"
+  },
+  "Box.About.Account.problem.title": {
+    "message": "Account Error"
+  },
+  "Box.About.Account.problem.help": {
+    "message": "Help"
+  },
+  "Box.About.Account.problem.types.db": {
+    "message": "Server problem: could not read database."
+  },
+  "Box.About.Account.problem.types.serverFail": {
+    "message": "The server is temporarily inaccessible."
+  },
+  "Box.About.Account.problem.types.unknownCredentials": {
+    "message": "Unknown account or wrong password."
+  },
+  "Box.About.Account.problem.types.unknownCredentials.cancelpassword": {
+    "message": "Cancel"
+  },
+  "Box.About.Account.problem.types.unknownCredentials.cancelpassword.tooltip": {
+    "message": "Clear you ActiveInbox Account password from your Preferences and stop this message"
+  },
+  "Box.About.Account.problem.types.unrecognisedAccount": {
+    "message": "Unrecognised account type."
+  },
+  "Box.About.Account.problem.types.unrecognisedErrorType": {
+    "message": "There was an unrecognised problem with the data from the server."
+  },
+  "Box.About.Account.problem.types.exception": {
+    "message": "An exception occurred."
+  },
+  "Box.About.Account.problem.types.unknownCredentials.reregister": {
+    "message": "Re-Register"
+  },
+  "Box.About.Account.problem.types.unknownCredentials.reregister.tooltip": {
+    "message": "Verify your ActiveInbox password"
+  },
+  "Box.About.News.notifications.newVersion.title": {
+    "message": "New Version Of ActiveInbox Ready!"
+  },
+  "Box.About.News.notifications.newVersion.content": {
+    "message": "ActiveInbox %1 is ready for you! It is highly recommended you install this free update."
+  },
+  "Box.About.News.notifications.newVersion.button": {
+    "message": "Update ActiveInbox"
+  },
+  "Box.About.News.twitter_link": {
+    "message": "Follow ActiveInbox on Twitter"
+  },
+  "Box.About.News.newsletter.title": {
+    "message": "Do you want a steadier stream of news?"
+  },
+  "Box.About.News.newsletter.content": {
+    "message": "Our little monthly newsletter rounds up all the news, tips, sneak previews and occassional gifts to get the most out of ActiveInbox!"
+  },
+  "Box.About.News.newsletter.signupbutton": {
+    "message": "Let me have it!"
+  },
+  "Box.Register.savePassword.noPasswordMatch": {
+    "message": "Your passwords did not match. Please re-enter them and try again."
+  },
+  "Box.Register.savePassword.noPassword": {
+    "message": "Please supply a password."
+  },
+  "Box.Register.savePassword.serverFail": {
+    "message": "Could not connect to the ActiveInbox server. Please try again in a few moments."
+  },
+  "Box.Register.savePassword.unknownCredentials": {
+    "message": "Your password did not match your account. Please re-enter it and try again. "
+  },
+  "Box.Register.savePassword.success": {
+    "message": "Your ActiveInbox account has been successfully set up for %1 on this computer. Do you want to refresh Gmail now"
+  },
+  "Labels.Types.statuses": {
+    "message": "Statuses"
+  },
+  "Labels.Types.statuses.singular": {
+    "message": "Status"
+  },
+  "Labels.Types.projects": {
+    "message": "Projects"
+  },
+  "Labels.Types.projects.singular": {
+    "message": "Project"
+  },
+  "Labels.Types.contexts": {
+    "message": "Contexts"
+  },
+  "Labels.Types.contexts.singular": {
+    "message": "Context"
+  },
+  "Labels.Types.references": {
+    "message": "References"
+  },
+  "Labels.Types.references.singular": {
+    "message": "Reference"
+  },
+  "Labels.Types.deadlines": {
+    "message": "Deadlines"
+  },
+  "Labels.Types.deadlines.singular": {
+    "message": "Deadline"
+  },
+  "Labels.Types.old": {
+    "message": "Old"
+  },
+  "Labels.Types.misc": {
+    "message": "Labels"
+  },
+  "Labels.Types.misc.singular": {
+    "message": "Label"
+  },
+  "Labels.Popout.Title": {
+    "message": "Open the ActiveInbox Label Browser"
+  },
+  "Search.Button": {
+    "message": "Search Mail"
+  },
+  "Search.Button.tooltip": {
+    "message": "Use ActiveInbox to search in a popup, without stopping what you are doing in Gmail"
+  },
+  "Compose.Personal": {
+    "message": "Compose self"
+  },
+  "Compose.Personal.tooltip": {
+    "message": "Drop a note, a task or a file to yourself"
+  },
+  "Compose.Mail": {
+    "message": "Compose Mail"
+  },
+  "ThreadListUI.GTDBox.Tooltip": {
+    "message": "Preview in Popup"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.preview": {
+    "message": "Preview in Popup"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.archive": {
+    "message": "Archive"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.finish": {
+    "message": "Finish (and archive)"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.action": {
+    "message": "Action (and archive)"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.del": {
+    "message": "Delete"
+  },
+  "ThreadListUI.GTDBox.Popup.lineitem.spam": {
+    "message": "Mark as Spam"
+  },
+  "Labelling.labels": {
+    "message": "Labels"
+  },
+  "Labelling.statuses.next_action": {
+    "message": "Next"
+  },
+  "Labelling.statuses.next_action.help": {
+    "message": "Track high priority emails you need to do ASAP"
+  },
+  "Labelling.statuses.action": {
+    "message": "Action"
+  },
+  "Labelling.statuses.action.help": {
+    "message": "Track important emails until their completion"
+  },
+  "Labelling.statuses.some_day": {
+    "message": "Someday"
+  },
+  "Labelling.statuses.some_day.help": {
+    "message": "Track emails you don't how or when to deal with, but are important"
+  },
+  "Labelling.statuses.waiting_on": {
+    "message": "Waiting On"
+  },
+  "Labelling.statuses.waiting_on.help": {
+    "message": "Track emails that you want a reply for"
+  },
+  "Labelling.statuses.finished": {
+    "message": "Finished"
+  },
+  "Labelling.statuses.finished.help": {
+    "message": "Mark an email as fully complete"
+  },
+  "Labelling.contexts.call": {
+    "message": "Call"
+  },
+  "Labelling.contexts.call.help": {
+    "message": "for conversations that require a phone call"
+  },
+  "Labelling.statuses.unread": {
+    "message": "Unread"
+  },
+  "Labelling.dropdown.recent": {
+    "message": "Recent"
+  },
+  "Labelling.dropdown.create": {
+    "message": "Create %1 Label"
+  },
+  "Labelling.dropdown.create.prompt": {
+    "message": "Create New %1 Label:"
+  },
+  "Labelling.dropdown.projects.title": {
+    "message": "Projects"
+  },
+  "Labelling.dropdown.contexts.title": {
+    "message": "Contexts"
+  },
+  "Labelling.dropdown.references.title": {
+    "message": "References"
+  },
+  "Labelling.buttons.archive": {
+    "message": "Archive"
+  },
+  "Labelling.buttons.archive.tooltip": {
+    "message": "Archive"
+  },
+  "Labelling.buttons.archive.next.tooltip": {
+    "message": "Archive and go to the next thread"
+  },
+  "Labelling.buttons.archived": {
+    "message": "Archived"
+  },
+  "Labelling.buttons.finished.tooltip": {
+    "message": "Finish"
+  },
+  "Labelling.notify.deleted": {
+    "message": "Deleted"
+  },
+  "Labelling.notify.spam": {
+    "message": "Spam"
+  },
+  "Labelling.setup.noStatus": {
+    "message": "You have no Status labels yet!"
+  },
+  "Labelling.setup.setupLink": {
+    "message": "Setup ActiveInbox"
+  },
+  "Labelling.setup.setupHide": {
+    "message": "Hide"
+  },
+  "ActionAndMove.button.archive": {
+    "message": "Archive"
+  },
+  "ActionAndMove.button.tooltip.archive": {
+    "message": "Archive and return"
+  },
+  "ActionAndMove.button.tooltip.prev.archive": {
+    "message": "Archive and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.archive": {
+    "message": "Archive and move to the next message"
+  },
+  "ActionAndMove.button.delete": {
+    "message": "Delete"
+  },
+  "ActionAndMove.button.tooltip.delete": {
+    "message": "Delete and return"
+  },
+  "ActionAndMove.button.tooltip.prev.delete": {
+    "message": "Delete and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.delete": {
+    "message": "Delete and move to the next message"
+  },
+  "ActionAndMove.button.report_spam": {
+    "message": "Spam"
+  },
+  "ActionAndMove.button.tooltip.report_spam": {
+    "message": "Report as Spam and return"
+  },
+  "ActionAndMove.button.tooltip.prev.report_spam": {
+    "message": "Report as Spam and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.report_spam": {
+    "message": "Report as Spam and move to the next message"
+  },
+  "ActionAndMove.button.move": {
+    "message": "Move"
+  },
+  "ActionAndMove.button.tooltip.move": {
+    "message": "Move back to the inbox"
+  },
+  "ActionAndMove.button.tooltip.prev.move": {
+    "message": "Move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.move": {
+    "message": "Move to the next message"
+  },
+  "ActionAndMove.button.finish": {
+    "message": "Finish"
+  },
+  "ActionAndMove.button.tooltip.finish": {
+    "message": "Finish and move back to the inbox"
+  },
+  "ActionAndMove.button.tooltip.prev.finish": {
+    "message": "Finish and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.finish": {
+    "message": "Finish and move to the next message"
+  },
+  "ActionAndMove.button.send": {
+    "message": "Send"
+  },
+  "ActionAndMove.button.tooltip.send": {
+    "message": "Send and return to the inbox"
+  },
+  "ActionAndMove.button.tooltip.prev.send": {
+    "message": "Send and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.send": {
+    "message": "Send and move to the next message"
+  },
+  "ActionAndMove.button.send_eom": {
+    "message": "Send EOM"
+  },
+  "ActionAndMove.button.tooltip.send_eom": {
+    "message": "Send (with No Reply Expected) and return to the inbox"
+  },
+  "ActionAndMove.button.tooltip.prev.send_eom": {
+    "message": "Send (with No Reply Expected) and move to the previous message"
+  },
+  "ActionAndMove.button.tooltip.next.send_eom": {
+    "message": "Send (with No Reply Expected) and move to the next message"
+  },
+  "LabelDOM.expander.opener": {
+    "message": "Show children"
+  },
+  "LabelDOM.expander.closer": {
+    "message": "Hide children"
+  },
+  "ThreadList.Loadbox.loading": {
+    "message": "Loading %1 of %2 threads"
+  },
+  "ThreadList.Loadbox.partialComplete": {
+    "message": "Downloaded the most recent %1 of %2 threads."
+  },
+  "ThreadList.Loadbox.partialComplete.all": {
+    "message": "Download All"
+  },
+  "ThreadList.NoThreads": {
+    "message": "No threads to show!"
+  },
+  "ThreadList.Thread.Attachment.title": {
+    "message": "Has attachment"
+  },
+  "ThreadList.Thread.DateFormat": {
+    "message": "mm/dd/yy"
+  },
+  "ThreadList.GroupBy.list": {
+    "message": "None"
+  },
+  "ThreadList.GroupBy.list.all": {
+    "message": "All"
+  },
+  "ThreadList.GroupBy.deadline": {
+    "message": "Deadline"
+  },
+  "ThreadList.GroupBy.project": {
+    "message": "Project"
+  },
+  "ThreadList.GroupBy.context": {
+    "message": "Context"
+  },
+  "ThreadList.GroupBy.contact": {
+    "message": "Contact"
+  },
+  "ThreadList.GroupBy.misc": {
+    "message": "Misc"
+  },
+  "LabelsMenu.Title": {
+    "message": "Labels"
+  },
+  "Browser.Types.label.statuses": {
+    "message": "STATUS"
+  },
+  "Browser.Types.label.projects": {
+    "message": "PROJECT"
+  },
+  "Browser.Types.label.contexts": {
+    "message": "CONTEXT"
+  },
+  "Browser.Types.label.references": {
+    "message": "REFERENCE"
+  },
+  "Browser.Types.search": {
+    "message": "SEARCH"
+  },
+  "Browser.Types.view": {
+    "message": "VIEW"
+  },
+  "Browser.Types.overview": {
+    "message": "OVERVIEW"
+  },
+  "Browser.Types.contact": {
+    "message": "CONTACT"
+  },
+  "Browser.Types.label.misc": {
+    "message": "LABEL"
+  },
+  "Views.all.name": {
+    "message": "Recent"
+  },
+  "Views.files.name": {
+    "message": "Files"
+  },
+  "Browser.Popup.Close": {
+    "message": "Close"
+  },
+  "Browser.Popup.Back": {
+    "message": "Back"
+  },
+  "Browser.Popup.Overview": {
+    "message": "Overview"
+  },
+  "Browser.Popup.openInGmail": {
+    "message": "Open in Gmail (hold Shift to use new tab)"
+  },
+  "Browser.Threads.Tabs.all": {
+    "message": "All"
+  },
+  "Browser.Threads.Tabs.recent": {
+    "message": "Recent"
+  },
+  "Browser.Threads.Tabs.files": {
+    "message": "Files"
+  },
+  "Browser.Threads.Tabs.Containers.statuses": {
+    "message": "To Do"
+  },
+  "Browser.Threads.Tabs.Containers.views": {
+    "message": "Views"
+  },
+  "Thread.Open": {
+    "message": "Open Message in Gmail"
+  },
+  "Browser.Thread.Paging.next": {
+    "message": "Next"
+  },
+  "Browser.Thread.Paging.prev": {
+    "message": "Previous"
+  },
+  "Browser.Thread.Paging.of": {
+    "message": "of"
+  },
+  "NoLabels": {
+    "message": "Get started by adding labels that start with %1."
+  },
+  "LabelsInfo.desc.statuses": {
+    "message": "Set the Status of emails that require your attention and keep them on your radar until they are completed."
+  },
+  "LabelsInfo.desc.projects": {
+    "message": "Keep emails associated with your projects to make them very easy to manage and complete."
+  },
+  "LabelsInfo.desc.contexts": {
+    "message": "Places/people for which to get emails done. E.g. all emails requiring a phone call might be in C/Call, everything for the office might be C/Office, and all emails for a VIP customer might be in 'C/Bob Smith'."
+  },
+  "LabelsInfo.desc.references": {
+    "message": "Give emails a reference label to make them easy to retrieve later, e.g. R/MeetingNotes, R/Invoices, R/Receipts."
+  },
+  "LabelsInfo.desc.old": {
+    "message": "Used to retain labels that are no longer actively used, e.g. Old/P/MyProject"
+  },
+  "LabelsInfo.suggestedlabels": {
+    "message": "Suggested Statuses"
+  },
+  "NoLabels.Manage": {
+    "message": "Manage Labels"
+  },
+  "NoLabels.Create": {
+    "message": "Create New Label"
+  },
+  "NoLabels.Create.Prompt": {
+    "message": "Create New %1 Label:"
+  },
+  "Box.DashboardShortcut.title": {
+    "message": "Show Overview in popup"
+  },
+  "Box.gtdgettingstarted.title": {
+    "message": "New to ActiveInbox?"
+  },
+  "Box.gtdgettingstarted.link": {
+    "message": "Quick Guide"
+  },
+  "Box.gtdgettingstarted.link.tooltip": {
+    "message": "Get started by reading our Quick Guide on the website"
+  },
+  "Box.gtdgettingstarted.hide": {
+    "message": "hide"
+  },
+  "DropdownActionList.Categorise.migrate.link": {
+    "message": "Turn your existing labels into Projects"
+  },
+  "DropdownActionList.Categorise.migrate.link.tooltip": {
+    "message": "Use our simple wizard to turn your existing labels into ActiveInbox Projects"
+  },
+  "DropdownActionList.Categorise.migrate.hide": {
+    "message": "hide"
+  },
+  "Box.setup.msg": {
+    "message": "The ActiveInbox labels do not appear to be properly set up for this account."
+  },
+  "Box.setup.install": {
+    "message": "Setup ActiveInbox"
+  },
+  "Box.setup.hide": {
+    "message": "hide"
+  },
+  "Box.setup.complete": {
+    "message": "Your labels have been added but Gmail needs refreshing to complete the installation. Refresh Gmail now?"
+  },
+  "Box.expander.gtdshortcuts": {
+    "message": "Quick Views"
+  },
+  "Box.expander.gtdtypes": {
+    "message": "Review Emails By:"
+  },
+  "Box.label": {
+    "message": "Show active %1 items in Gmail (use Shift+click to see all)"
+  },
+  "Box.showall": {
+    "message": "Show all %1 in Gmail"
+  },
+  "Box.popup": {
+    "message": "Show %1 in ActiveInbox Label Browser"
+  },
+  "Box.filterextend": {
+    "message": "Filter %1"
+  },
+  "Box.gtdtypes.tooltip": {
+    "message": "See an overview of everything requiring your attention, and drill to find useful old emails"
+  },
+  "Box.gtdtypes.pin": {
+    "message": "Toggle pinning %1 to the sidebar"
+  },
+  "Box.gtdtypes.statuses": {
+    "message": "Status"
+  },
+  "Box.gtdtypes.statuses.overview": {
+    "message": "See Overview in popup"
+  },
+  "Box.gtdtypes.statuses.overview.tooltip": {
+    "message": "Open the popup containing all active items."
+  },
+  "Box.gtdtypes.row.tooltip": {
+    "message": "Click to review actioned emails by %1 (and drill into useful old emails)"
+  },
+  "Box.gtdtypes.statuses.tooltip": {
+    "message": "Click to see all active items"
+  },
+  "Box.gtdtypes.contacts": {
+    "message": "People"
+  },
+  "Box.prefswarning.msg": {
+    "message": "Your ActiveInbox preferences appear malformed, which may break several features."
+  },
+  "Box.prefswarning.faq": {
+    "message": "See FAQ"
+  },
+  "LabelsInfo.install": {
+    "message": "Set up ActiveInbox"
+  },
+  "LabelsInfo.categories.prefix": {
+    "message": "Prefix:"
+  },
+  "GmailLabelsBox.Recent.Title": {
+    "message": "Recent Labels"
+  },
+  "GmailLabelsBox.Recent.Title.tooltip": {
+    "message": "Toggle the visibility of Gmail's recent labels"
+  },
+  "ReplyToSelf": {
+    "message": "Reply to Self"
+  },
+  "ReplyToSelf.tooltip": {
+    "message": "Add personal notes (next actions & background info) that your contacts do not see"
+  },
+  "ConversationSendButton.Statuses.selected": {
+    "message": "selected"
+  },
+  "ConversationSendButton.Statuses.tooltip": {
+    "message": "Change Status"
+  },
+  "ConversationSendButton.Archive": {
+    "message": "Archive"
+  },
+  "ConversationSendButton.Statuses.None": {
+    "message": "No Status"
+  },
+  "ConversationSendButton.EOM": {
+    "message": "NO REPLY EXPECTED"
+  },
+  "ConversationSendButton.SendNew": {
+    "message": "Send and..."
+  },
+  "SearchBuilder.LabelsMenu.todo.title": {
+    "message": "Status:"
+  },
+  "SearchBuilder.LabelsMenu.views.title": {
+    "message": "Views:"
+  },
+  "SearchBuilder.Menu.search_within": {
+    "message": "Search Within"
+  },
+  "SearchBuilder.Menu.search_within.search": {
+    "message": "Search"
+  },
+  "SearchBuilder.item.tooltip": {
+    "message": "Click to view in Gmail (Hold the Alt-key when you select an item to keep this menu open)"
+  },
+  "SearchBuilder.TypeList.item.pinnedTooltip": {
+    "message": "Click to view in Gmail"
+  },
+  "LegalNotice": {
+    "message": "ActiveInbox and its authors are not affiliated with, approved or endorsed by David Allen or the David Allen Company. GTD and Getting Things Done are registered trademarks of the David Allen Company. For more information on GTD, the David Allen Company, and related products, please visit DavidCo.com."
+  },
+  "Prefs.boxlink": {
+    "message": "Preferences"
+  },
+  "Prefs.confirmRefresh": {
+    "message": "You have to reload Gmail for your changes to take effect.\nReload now?"
+  },
+  "Prefs.confirmCreateCategory": {
+    "message": "Are you sure you want to create the %1 Label Category with the prefix %2?"
+  },
+  "Prefs.gtd.labels.types.button.add.getType": {
+    "message": "Enter a name for the new category:"
+  },
+  "Prefs.gtd.labels.types.button.add.getPrefix": {
+    "message": "Enter a prefix for %1:"
+  },
+  "Prefs.gtd.labels.types.button.add.already_exists": {
+    "message": "The category %1 already exists! Please try again (nothing has been added)."
+  },
+  "Prefs.gtd.labels.types.button.add.prefix_already_exists": {
+    "message": "The prefix %1 already exists! Please try again (nothing has been added)."
+  },
+  "Prefs.gtd.labels.types.button.remove.confirm": {
+    "message": "Remove the %1 category?"
+  },
+  "Prefs.gtd.labels.types.button.remove.cannot_remove_statuses": {
+    "message": "The Statuses category is not removeable!"
+  },
+  "Prefs.gtd.password.noMatch": {
+    "message": "Your passwords did not match. Please reenter them and try again."
+  },
+  "Prefs.gtd.password.confirmClear": {
+    "message": "Are you sure you want to delete your password? This will stop ActiveInbox from accessing your account."
+  },
+  "Prefs.gtd.password.loading": {
+    "message": "Refreshing..."
+  },
+  "Prefs.gtd.password.verified.success": {
+    "message": "Password verified ok."
+  },
+  "Prefs.gtd.password.verified.fail": {
+    "message": "Password failed - please check."
+  },
+  "Prefs.gtd.password.no_password": {
+    "message": "No password entered."
+  },
+  "Prefs.gtd.labelcategories.remove": {
+    "message": "Remove category"
+  },
+  "ServerErrorReport.confirmApproveHTML": {
+    "message": "ActiveInbox would like to include your Gmail layout.\n\nHowever, as it may include some text from your emails, we would like to check this is okay with you. (We do not store this information for more than 14 days - just while we fix the problem, then we delete it from our systems - and it's extremely useful).\n\n\nOkay to include Gmail layout information?"
+  },
+  "Deadline.Intro": {
+    "message": "Schedule"
+  },
+  "Deadline.Today": {
+    "message": "Today"
+  },
+  "Deadline.Save": {
+    "message": "Save"
+  },
+  "Deadline.DefaultDate": {
+    "message": "mm/dd"
+  },
+  "Deadline.PrettyDate.none": {
+    "message": "Set Deadline"
+  },
+  "Deadline.PrettyDate.month.1": {
+    "message": "January"
+  },
+  "Deadline.PrettyDate.month.2": {
+    "message": "February"
+  },
+  "Deadline.PrettyDate.month.3": {
+    "message": "March"
+  },
+  "Deadline.PrettyDate.month.4": {
+    "message": "April"
+  },
+  "Deadline.PrettyDate.month.5": {
+    "message": "May"
+  },
+  "Deadline.PrettyDate.month.6": {
+    "message": "June"
+  },
+  "Deadline.PrettyDate.month.7": {
+    "message": "July"
+  },
+  "Deadline.PrettyDate.month.8": {
+    "message": "August"
+  },
+  "Deadline.PrettyDate.month.9": {
+    "message": "September"
+  },
+  "Deadline.PrettyDate.month.10": {
+    "message": "October"
+  },
+  "Deadline.PrettyDate.month.11": {
+    "message": "November"
+  },
+  "Deadline.PrettyDate.month.12": {
+    "message": "December"
+  },
+  "Deadline.PrettyDate.month.1.short": {
+    "message": "Jan"
+  },
+  "Deadline.PrettyDate.month.2.short": {
+    "message": "Feb"
+  },
+  "Deadline.PrettyDate.month.3.short": {
+    "message": "Mar"
+  },
+  "Deadline.PrettyDate.month.4.short": {
+    "message": "Apr"
+  },
+  "Deadline.PrettyDate.month.5.short": {
+    "message": "May"
+  },
+  "Deadline.PrettyDate.month.6.short": {
+    "message": "June"
+  },
+  "Deadline.PrettyDate.month.7.short": {
+    "message": "July"
+  },
+  "Deadline.PrettyDate.month.8.short": {
+    "message": "Aug"
+  },
+  "Deadline.PrettyDate.month.9.short": {
+    "message": "Sep"
+  },
+  "Deadline.PrettyDate.month.10.short": {
+    "message": "Oct"
+  },
+  "Deadline.PrettyDate.month.11.short": {
+    "message": "Nov"
+  },
+  "Deadline.PrettyDate.month.12.short": {
+    "message": "Dec"
+  },
+  "Deadline.QuickLinks.none": {
+    "message": "none"
+  },
+  "Deadline.QuickLinks.day.singular": {
+    "message": "day"
+  },
+  "Deadline.QuickLinks.day.plural": {
+    "message": "days"
+  },
+  "Deadline.QuickLinks.week.singular": {
+    "message": "week"
+  },
+  "Deadline.invalidInput": {
+    "message": "Please enter a valid date, in the format of 'month/day'. E.g. for the 1st of December, you would enter 12/1."
+  },
+  "Deadline.ActionsHeaderButton": {
+    "message": "Schedule"
+  },
+  "Deadline.menu.days.none": {
+    "message": "No Deadline"
+  },
+  "Deadline.menu.days.0": {
+    "message": "Today"
+  },
+  "Deadline.menu.days.1": {
+    "message": "Tomorrow"
+  },
+  "Deadline.menu.weeks.1": {
+    "message": "1 Week"
+  },
+  "Deadline.menu.save": {
+    "message": "Save"
+  },
+  "Calendar.header.wk": {
+    "message": "wk"
+  },
+  "Calendar.header.mon": {
+    "message": "mon"
+  },
+  "Calendar.header.tue": {
+    "message": "tue"
+  },
+  "Calendar.header.wed": {
+    "message": "wed"
+  },
+  "Calendar.header.thur": {
+    "message": "thur"
+  },
+  "Calendar.header.fri": {
+    "message": "fri"
+  },
+  "Calendar.header.sat": {
+    "message": "sat"
+  },
+  "Calendar.header.sun": {
+    "message": "sun"
+  },
+  "CalendarInput.shortcuts.none": {
+    "message": "None"
+  },
+  "CalendarInput.shortcuts.today": {
+    "message": "Today"
+  },
+  "CalendarInput.shortcuts.tomorrow": {
+    "message": "Tomorrow"
+  },
+  "CalendarInput.shortcuts.startnextweek": {
+    "message": "Start of Next Week"
+  },
+  "CalendarInput.warning": {
+    "message": "Date not saved"
+  },
+  "StoredSearch.Types.deadline": {
+    "message": "Scheduled"
+  },
+  "MenuSection.Macro": {
+    "message": "Shortcuts"
+  },
+  "MenuSection.SSC": {
+    "message": "Email Status & Category"
+  },
+  "MenuSection.SSC.Status": {
+    "message": "Status"
+  },
+  "MenuSection.SSC.Deadline": {
+    "message": "Schedule"
+  },
+  "MenuSection.SSC.Categorise": {
+    "message": "Category"
+  },
+  "MenuSection.Related": {
+    "message": "Retrieve Information"
+  },
+  "MenuSection.Related.Button": {
+    "message": "Recent Conversations"
+  },
+  "MenuSection.Related.Button.tooltip": {
+    "message": "Glance at outstanding actions, exchanged files & historic emails relevant to this conversation"
+  },
+  "DropdownActionList.Status.tooltip": {
+    "message": "Action and prioritize this email to guarantee it gets completed"
+  },
+  "DropdownActionList.Status.NoLabel": {
+    "message": "Set Status"
+  },
+  "DropdownActionList.Status.SetupRequired": {
+    "message": "Set Up"
+  },
+  "DropdownActionList.Status.ManyLabelsSuffix": {
+    "message": "Statuses"
+  },
+  "DropdownActionList.Categorise.tooltip": {
+    "message": "Group emails to make them easy to find later"
+  },
+  "DropdownActionList.Categorise.NoLabel.defaultPrefix": {
+    "message": "Set"
+  },
+  "DropdownActionList.Categorise.NoLabel": {
+    "message": "Label"
+  },
+  "DropdownActionList.Categorise.NoLabel.projects": {
+    "message": "Assign to Project"
+  },
+  "DropdownActionList.Categorise.NoLabel.references": {
+    "message": "Set Reference"
+  },
+  "DropdownActionList.Categorise.ManyLabelsSuffix": {
+    "message": "Labels"
+  },
+  "DropdownActionList.Categorise.Recommended": {
+    "message": "Recommended"
+  },
+  "DropdownActionList.Macro.all": {
+    "message": "all shortcuts"
+  },
+  "DropdownActionList.Deadline.tooltip": {
+    "message": "Postpone this email or set a deadline to use your time better"
+  },
+  "PowerSendButton": {
+    "message": "Send"
+  },
+  "PowerSendButton.AndArchive": {
+    "message": "& Archive"
+  },
+  "PowerSendButton.tooltip": {
+    "message": "Update the Status, check the category & archive your email everytime you reply"
+  },
+  "PowerSendButton.DefaultSend": {
+    "message": "Send"
+  },
+  "HeaderButton": {
+    "message": "File"
+  },
+  "Macros.Buttons.generic.tooltip": {
+    "message": "Tidy this email away"
+  },
+  "Macros.Buttons.generic.tooltip.nextSuffix": {
+    "message": " (and move to an older email)"
+  },
+  "Macros.Buttons.generic.tooltip.prevSuffix": {
+    "message": " (and move to a newer email)"
+  },
+  "Macros.Buttons.send": {
+    "message": "Send"
+  },
+  "Macros.Buttons.sendeom": {
+    "message": "Send EOM"
+  },
+  "Macros.Buttons.sendeom.tooltip": {
+    "message": "Send email with 'End of Message' to indicate you do not want a reply"
+  },
+  "Macros.Buttons.archive": {
+    "message": "Archive"
+  },
+  "Macros.Buttons.finish": {
+    "message": "Finish"
+  },
+  "Macros.Buttons.finish.tooltip": {
+    "message": "Complete the email: remove all Statuses and Deadlines and archive"
+  },
+  "Macros.Buttons.delete": {
+    "message": "Delete"
+  },
+  "Macros.Buttons.spam": {
+    "message": "Report Spam"
+  },
+  "Macros.Buttons.move": {
+    "message": "Next"
+  },
+  "Macros.Buttons.move.tooltip": {
+    "message": "Do nothing"
+  },
+  "Macros.Buttons.action_archive": {
+    "message": "Action (and Archive)"
+  },
+  "Macros.Buttons.finish_archive": {
+    "message": "Finish (and Archive)"
+  },
+  "Macros.AutoAdvanceWarning": {
+    "message": "Sorry! ActiveInbox cannot move to the next conversation when the 'Auto Advance' Gmail Lab is enabled. Please disable it to use ActiveInbox fully."
+  },
+  "Hab.inlinePrefs.show_status_buttons": {
+    "message": "Show Statuses as buttons"
+  },
+  "Hab.inlinePrefs.status_buttons_own_row": {
+    "message": "Put Status buttons on a seperate row"
+  },
+  "Hab.inlinePrefs.hide_category": {
+    "message": "Hide the %1 dropdown"
+  },
+  "Hab.inlinePrefs.macros_with_status_buttons": {
+    "message": "Put 'Action & Move' shortcuts on the Status buttons row"
+  },
+  "Hab.inlinePrefs.show_general_categories": {
+    "message": "Show regular labels in a dropdown (and labels from Label Types you have hidden)"
+  },
+  "Hab.inlinePrefs.disableHab": {
+    "message": "Turn the Horizontal Action Bar off"
+  },
+  "Hab.inlinePrefs.disableHab.confirm": {
+    "message": "You can re-enable the Horizontal Action Bar from the ActiveInbox Preferences. Are you sure you wish to disable it?"
+  },
+  "Hab.inlinePrefs.cv_move_direction": {
+    "message": "When Archive/Delete/etc. move towards:"
+  },
+  "Hab.inlinePrefs.cv_move_direction.older": {
+    "message": "Older Conversations"
+  },
+  "Hab.inlinePrefs.cv_move_direction.newer": {
+    "message": "Newer Conversations"
+  },
+  "Hab.inlinePrefs.cv_move_direction.both": {
+    "message": "Show both directions"
+  },
+  "Hab.inlinePrefs.powersend_archive": {
+    "message": "Archive conversation when Send"
+  },
+  "Hab.inlinePrefs.do_not_allow_deadlines_and_statuses": {
+    "message": "Remove status labels when you add a deadline (and vice versa)"
+  },
+  "Hab.tooltip.compose": {
+    "message": "Label emails as you send them"
+  },
+  "InlinePrefs.title": {
+    "message": "Quickly Edit Preferences"
+  },
+  "InlinePrefs.button.tooltip": {
+    "message": "Quickly edit visual preferences"
+  },
+  "ComposeRelated.link": {
+    "message": "Previous Emails"
+  },
+  "ComposeRelated.link.tooltip": {
+    "message": "Let ActiveInbox show you earlier conversations to catch up on what was discussed, and copy in useful data"
+  },
+  "AccountEnable.enable": {
+    "message": "Enable ActiveInbox"
+  },
+  "AccountEnable.confirmReload": {
+    "message": "Enabling ActiveInbox requires Gmail to be reloaded. Would you like to reload now?"
+  },
+  "Welcome.confirmReload": {
+    "message": "This requires reloading Gmail to take effect. Would you like to reload now?"
+  },
+  "DropdownHelp.close": {
+    "message": "close"
+  },
+  "ConversationSidebar.inlinePrefs.show_shortcuts": {
+    "message": "Show Shortcut Buttons"
+  },
+  "ConversationSidebar.inlinePrefs.show_ssc": {
+    "message": "Show Label Choosers"
+  },
+  "ConversationSidebar.inlinePrefs.show_related_browse": {
+    "message": "Show 'Recent Conversations' Button"
+  },
+  "ConversationSidebar.inlinePrefs.disable_conversationsidebar": {
+    "message": "Turn this Conversation Sidebar off"
+  },
+  "ConversationSidebar.inlinePrefs.disable_conversationsidebar.confirm": {
+    "message": "You can re-enable the Conversation Sidebar from the ActiveInbox Preferences. Are you sure you wish to disable it?"
+  },
+  "QuickHelp.title": {
+    "message": "Quick Help"
+  },
+  "PinData.pin.tooltip": {
+    "message": "Pin currently important items to make them very easy to find."
+  },
+  "RelatedThread.help": {
+    "message": "Search results for emails that share the same people or have the same labels as this conversation."
+  },
+  "DropdownHelp.tooltip": {
+    "message": "Click to see a quick help popup"
+  },
+  "CreateLabel.title": {
+    "message": "Please enter a new %1"
+  },
+  "CreateLabel.labelnameinfo": {
+    "message": "This will create a label called "
+  },
+  "CreateLabel.sublabeltip": {
+    "message": "Tip: Use forward slashes ('/') to create nested labels (e.g. Label/SubLabel)"
+  },
+  "ActiveResults.top_priority": {
+    "message": "Top Priority"
+  },
+  "ActiveResults.todo": {
+    "message": "To Do"
+  },
+  "\n            Box.about.support\n         ": {
+    "message": "wtf"
+  },
+  "\n            Box.about.blog\n         ": {
+    "message": "bzz"
+  }
 }

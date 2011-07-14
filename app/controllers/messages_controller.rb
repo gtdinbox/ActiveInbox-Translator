@@ -3,30 +3,40 @@ class MessagesController < ApplicationController
 
   def show
     default_locale = Rails.configuration.gtdinbox_master_locale
-    params[:lang] = 'it'
+
     locale = if params.has_key?(:lang)
-              Locale.find_by_lang_code(params[:lang])
-             else
-               default_locale
-             end
+      Locale.find_by_lang_code(params[:lang])
+    else
+      @is_default_locale = true
+      default_locale
+    end
 
     unless locale
       raise "Undefined locale"
     else
       @messages = Message.locale_with_masterlist(locale.id)
-
     end
-
   end
 
   def update
     message = Message.find_by_id(params[:id])
 
-    unless message
-       raise "missing record"
-      else
+    if message
+       message.value = params[:value]
        message.save
+      else
+       rise "Record not found"
     end
-    message.to_json
+    render :json => Message.translation_stats(message.locale)
+  end
+
+  def create
+    locale = Locale.find_by_lang_code(params[:lang])
+    message = Message.create(
+      :locale_id => locale.id,
+      :name => params[:name],
+      :value => params[:value]
+    )
+    render :json => Message.translation_stats(locale)
   end
 end
