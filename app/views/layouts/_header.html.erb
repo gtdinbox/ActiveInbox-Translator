@@ -1,0 +1,7 @@
+<% user =  current_user %>
+<div>
+  <% if user %>
+    Logged in as <%= link_to(user.email, edit_account_url(:id => user.id)) %> | 
+    <%= link_to "logout", logout_url, :method => :delete %>
+  <% end %>
+</div>

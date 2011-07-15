@@ -8,18 +8,27 @@ class GtdInboxRepo
   end
 end
 
-class Message
-  sync_values_of :name, :value do
+def sync_input(file='messages.json')
+    filepath = Rails.root.to_s + "/test/fixtures/#{file}"
+    messages = JSON.parse(File.open(filepath, 'r').read)
+    messages.each{|key, record| messages[key] = record['message'] }
+    messages
+end
 
-      filepath = Rails.root.to_s + "/test/fixtures/messages.json"
-      @messages = JSON.parse(File.open(
-        Rails.configuration.gtdinbox_message_file,
-      'r').read)
 
-      @messages.each{|key, record| @messages[key] = record['message'] }
-      @messages
+class FakeMessageOne
+  include GtdInboxSyncable
+  sync_values_of(:name, :value) do
+    sync_input
   end
 end
+
+
+class FakeMessageTwo
+  include GtdInboxSyncable
+  #sync_values_of(:name, :value) &sync_input('messages-changed.json')
+end
+
 
 
 class MessagesTest < ActiveSupport::TestCase
@@ -29,11 +38,12 @@ class MessagesTest < ActiveSupport::TestCase
   #  set_sync_input('messages.json')
   #end
 
-  #test "should parse and import the records in'content/locales/en_US/messages.json'" do
-  #  stats = Message.sync!
-  #  assert_equal(@messages.keys.size, Message.count)
-  #  assert_equal(@messages.keys.size, stats[:created])
-  #end
+  test "should parse and import the records in messages.json'" do
+    stub(FakeMessageOne).create {}
+    stub(FakeMessageOne).where { [nil] }
+    debugger
+    stats = FakeMessageOne.sync!
+  end
 
   #test "Should not update records if message values have not changed" do
   #  Message.sync!
@@ -41,32 +51,19 @@ class MessagesTest < ActiveSupport::TestCase
   #  assert_equal(stats[:identical], @messages.size)
   #end
 
-  test "Should flag messages as deleted if these do not exist in the message.json file " do
-    stats = Message.sync!
-    pp stats
-    set_sync_input('messages-changed.json')
-    stats = Message.sync!
-    pp stats
+  #test "Should flag messages as deleted if these do not exist in the message.json file " do
+  #  stats = Message.sync!
+  #  pp stats
+  #  set_sync_input('messages-changed.json')
+  #  stats = Message.sync!
+  #  pp stats
 
-    #assert_equal(stats[:updated], 1, "One element should have been updated")
-    #assert_equal(stats[:created], 1, "One element should have been created")
-    #assert_equal(stats[:deleted], 1, "One element should have been deleted")
-    #assert Message.find_by_name("Box.expander.boxabout").deleted
-    #assert_not_nil Message.find_by_name("Box.expander.boxaboutz")
-    #assert_equal(Message.count, @messages.size + 1)
-  end
+  #  #assert_equal(stats[:updated], 1, "One element should have been updated")
+  #  #assert_equal(stats[:created], 1, "One element should have been created")
+  #  #assert_equal(stats[:deleted], 1, "One element should have been deleted")
+  #  #assert Message.find_by_name("Box.expander.boxabout").deleted
+  #  #assert_not_nil Message.find_by_name("Box.expander.boxaboutz")
+  #  #assert_equal(Message.count, @messages.size + 1)
+  #end
 
-  private
-  def set_sync_input(filename)
-    Message.sync_values_of :name, :value do
-
-      filepath = Rails.root.to_s + "/test/fixtures/#{filename}"
-      @messages = JSON.parse(File.open(
-        Rails.configuration.gtdinbox_message_file,
-      'r').read)
-
-      @messages.each{|key, record| @messages[key] = record['message'] }
-      @messages
-    end
-  end
 end

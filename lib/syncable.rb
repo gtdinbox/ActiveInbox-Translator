@@ -1,4 +1,3 @@
-require 'ruby-debug'
 #
 # Mixin providing one way synchronisation capabilities 
 # to ActiveRecord models.
@@ -20,7 +19,6 @@ module GtdInboxSyncable
 
     def sync!
       @master_locale = Rails.configuration.gtdinbox_master_locale
-
       reset_stats
       name_values = @sync_block.call
       name_values.each do |name, value|
@@ -62,7 +60,6 @@ module GtdInboxSyncable
         if record.send(@sync_value_attribute) === value and not record.deleted
           @sync_stats[:identical] += 1
         else
-          puts 'Updating value for '+name
           record.send("#{@sync_value_attribute}=", value)
           record.deleted = false
           record.save

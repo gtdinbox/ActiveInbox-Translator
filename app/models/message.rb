@@ -40,6 +40,7 @@ class Message < ActiveRecord::Base
     master_list = Message.select("name, value").
                           where("locale_id = ?", master_locale.id)
 
+
     master_list.each do |message|
       @messages[message.name] = {
         :master_value => message.value,

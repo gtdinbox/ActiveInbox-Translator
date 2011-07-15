@@ -1,0 +1,26 @@
+<% form_action = case params[:controller]
+    when 'user_session'
+      login_url
+    when 'user'
+      params.has_key?(:id) ? user_url(:id => params[:id] ) : signup_url
+    end
+
+   method = params[:controller] === 'user' and @user.new_record? ? :put : :post
+%>
+
+<% form_for(@user, :url => form_action, :html => {:method => method}) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :email %><br />
+  <%= f.text_field :email %><br />
+  <br />
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+  <br />
+
+  <% if params[:controller] === 'user' %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %><br />
+  <% end %>
+  <%= f.submit "Login" %>
+<% end %>

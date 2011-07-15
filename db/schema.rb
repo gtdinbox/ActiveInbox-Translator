@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713122652) do
+ActiveRecord::Schema.define(:version => 20110715090219) do
 
   create_table "locales", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20110713122652) do
     t.datetime "updated_at"
     t.integer  "locale_id"
     t.boolean  "in_sync",    :default => true
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",              :null => false
+    t.string   "name"
+    t.string   "encrypted_password", :null => false
+    t.string   "salt",               :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -16,6 +16,7 @@ end
 require 'zip/zip'
 require 'zip/zipfilesystem'
 require 'fileutils'
+require 'digest'
 require 'pp'
 
 require Rails.root.to_s + "/lib/syncable"

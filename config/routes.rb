@@ -1,12 +1,23 @@
 ActiveInboxTranslator::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
   match 'messages/:lang' => 'messages#create', :via => 'post', :as => 'messages'
   match 'messages/:lang/:id' => 'messages#update', :via => 'put', :as => 'messages'
   match 'messages(/:lang)' => 'messages#show', :via => 'get', :as => 'messages'
-
-
   get "export" => "application#export_bundle"
+
+  get "login" => "user_session#new", :as => 'login'
+  post "login" => "user_session#create", :as => 'login'
+  delete "logout" => "user_session#destroy", :as => 'logout'
+
+  get "signup" => "user#new", :as => 'signup'
+  post "signup" => "user#create", :as => 'signup'
+  match "user/:id/edit" => "user#edit", :via => 'get', :as => 'edit_account'
+  match "user/:id" => "user#update", :via => 'put', :as => 'user'
+
+
+  root :to => 'messages#show', :via => 'get', :lang => 'it'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
