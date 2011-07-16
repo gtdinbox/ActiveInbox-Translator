@@ -2,6 +2,7 @@ ActiveInboxTranslator::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+
   match 'messages/:lang' => 'messages#create', :via => 'post', :as => 'messages'
   match 'messages/:lang/:id' => 'messages#update', :via => 'put', :as => 'messages'
   match 'messages(/:lang)' => 'messages#show', :via => 'get', :as => 'messages'

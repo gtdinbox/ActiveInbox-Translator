@@ -3,14 +3,27 @@ class ApplicationController < ActionController::Base
   before_filter :redirect_if_anoymous
 
 
-  #
   # Redirects anonymous users to the loggin form.
-  #
 
   def redirect_if_anoymous
     unless session.has_key?(:user_id)
       redirect_to login_url, :notice => "Please log in first"
+      #render :text => "Please log in first"
     end
+  end
+
+  def redirect_unless_admin
+    unless session.has_key?(:user_id) and session[:is_admin]
+      redirect_to login_url, :notice => "Please login first"
+      #render :text => "You are not admin.."
+    end
+  end
+
+  #
+  # Rises an exception unless the user is admin or is editing/updating its own account
+  #
+  def error_unless_authorized
+    raise "AdminOnly" unless session[:user_id] == params[:id].to_i or session[:is_admin]
   end
 
 
@@ -32,7 +45,4 @@ class ApplicationController < ActionController::Base
       :filename => File.basename(bundle_path),
       :disposition => 'attachment'
   end
-
-
-
 end

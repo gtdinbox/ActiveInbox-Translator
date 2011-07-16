@@ -5,22 +5,25 @@
       params.has_key?(:id) ? user_url(:id => params[:id] ) : signup_url
     end
 
-   method = params[:controller] === 'user' and @user.new_record? ? :put : :post
+   method = (not @user.new_record?  and params[:controller] == 'user') ? :put : :post
 %>
 
 <% form_for(@user, :url => form_action, :html => {:method => method}) do |f| %>
   <%= f.error_messages %>
-
   <%= f.label :email %><br />
   <%= f.text_field :email %><br />
   <br />
   <%= f.label :password %><br />
   <%= f.password_field :password %><br />
   <br />
-
   <% if params[:controller] === 'user' %>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %><br />
+  <% end %>
+  <br/>
+  <% if form_action == signup_url or method == :put %>
+    <%= f.label :is_admin %><br />
+    <%= f.check_box :is_admin %><br />
   <% end %>
   <%= f.submit "Login" %>
 <% end %>

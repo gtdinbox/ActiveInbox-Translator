@@ -1,12 +1,15 @@
 class UserController < ApplicationController
   skip_before_filter :redirect_if_anoymous, :only => [:new, :create]
+  before_filter :redirect_unless_admin, :only => [:new, :create]
+  before_filter :error_unless_authorized, :only => [:edit, :update]
+
 
   # GET /users
   def index
     @users = User.all
   end
 
-  # GET /users/1
+  # GET /users/1 (route not implemented)
   def show
     @user = User.find(params[:id])
   end
@@ -34,7 +37,6 @@ class UserController < ApplicationController
   end
 
   # PUT /users/1
-  # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
 
@@ -46,15 +48,10 @@ class UserController < ApplicationController
   end
 
   # DELETE /users/1
-  # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-    end
+    @user.remove
+    redirect_to(users_url, :notice => "User was successfully removed")
   end
 
 end
