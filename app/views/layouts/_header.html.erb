@@ -3,7 +3,8 @@
   <% if user %>
     Logged in as <%= link_to(user.email, edit_account_url(:id => user.id)) %> | 
     <% if user.is_admin %>
-      <%= link_to("Manage users", user_index_url) %> |
+      <%= link_to(" Manage users", user_index_url) %> |
+      <%= link_to(" Export", export_url) %> |
     <% end %>
     <%= link_to "logout", logout_url, :method => :delete %>
   <% end %>

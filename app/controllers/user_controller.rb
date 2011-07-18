@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   skip_before_filter :redirect_if_anoymous, :only => [:new, :create]
-  before_filter :redirect_unless_admin, :only => [:new, :create]
+  before_filter :redirect_unless_admin, :only => [:new, :create, :index, :delete]
   before_filter :error_unless_authorized, :only => [:edit, :update]
 
 
@@ -38,10 +38,13 @@ class UserController < ApplicationController
 
   # PUT /users/1
   def update
-    #todo: this should redirect to user#index if this is the page referrer
     @user = User.find(params[:id])
+    attributes = params[:user]
 
-    if @user.update_attributes(params[:user])
+    #Always delete is_admin attibute unless user is admin
+    attributes.delete(:is_admin) unless session[:is_admin]
+
+    if @user.update_attributes(attributes)
       redirect_to(user_index_url, :notice => 'User was successfully updated.')
     else
       render :action => "edit"

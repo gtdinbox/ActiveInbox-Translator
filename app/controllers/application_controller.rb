@@ -2,20 +2,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :redirect_if_anoymous
 
-
   # Redirects anonymous users to the loggin form.
 
   def redirect_if_anoymous
     unless session.has_key?(:user_id)
       redirect_to login_url, :notice => "Please log in first"
-      #render :text => "Please log in first"
     end
   end
 
   def redirect_unless_admin
     unless session.has_key?(:user_id) and session[:is_admin]
-      redirect_to login_url, :notice => "Please login first"
-      #render :text => "You are not admin.."
+      redirect_to root_url, :notice => "You do not have access to this page"
     end
   end
 
@@ -30,7 +27,6 @@ class ApplicationController < ActionController::Base
   #
   # Returns the user selected locale or falls back on the default one
   #
-  #
 
   def get_locale
     default_locale = Rails.configuration.gtdinbox_master_locale
@@ -44,9 +40,6 @@ class ApplicationController < ActionController::Base
     @is_default_locale = default_locale.id === locale.id
     locale
   end
-
-
-
 
   #
   # Exports all localised messages and pages, and bundle them into a downloadable zip archive.

@@ -21,7 +21,7 @@
     <%= f.password_field :password_confirmation %><br />
   <% end %>
   <br/>
-  <% if form_action == signup_url or method == :put %>
+  <% if (form_action == signup_url or method == :put) and session[:is_admin] %>
     <%= f.label :is_admin %><br />
     <%= f.check_box :is_admin %><br />
   <% end %>
