@@ -1,0 +1,6 @@
+<h1>Help pages </h1>
+<ul>
+  <% for page in @pages %>
+    <li><%= link_to(page.name, page_form_url(:lang => @locale.lang_code, :id => page.id)) %></li>
+  <% end %>
+</ul>

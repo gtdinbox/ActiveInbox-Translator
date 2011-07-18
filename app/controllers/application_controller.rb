@@ -27,6 +27,27 @@ class ApplicationController < ActionController::Base
   end
 
 
+  #
+  # Returns the user selected locale or falls back on the default one
+  #
+  #
+
+  def get_locale
+    default_locale = Rails.configuration.gtdinbox_master_locale
+
+    locale = if params.has_key?(:lang)
+      Locale.find_by_lang_code(params[:lang])
+    else
+      default_locale
+    end
+
+    @is_default_locale = default_locale === locale
+    debugger
+    locale
+  end
+
+
+
 
   #
   # Generate a zip bundle for exporting translated locales

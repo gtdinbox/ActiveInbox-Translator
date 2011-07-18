@@ -1,0 +1,16 @@
+<h1>Registered user accounts </h1>
+
+<div id=new-user><%= link_to('Create new user', signup_url) %><div>
+
+<ul class=user>
+  <% for user in @users %>
+    <li <%='class=admin' if user.is_admin %>><%= user.email %>
+      <span class=actions>
+        <%= link_to(' delete', user_delete_url(:id => user.id), :class => 'delete', :method => 'delete',
+            :confirm => 'are you sure? this action is irreversible') unless user === current_user %>
+
+        <%= link_to(' update', edit_account_url(:id => user.id), :class => 'update') %>
+      </span>
+    </li>
+  <% end %>
+</ul>

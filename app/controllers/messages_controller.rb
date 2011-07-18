@@ -2,14 +2,7 @@ class MessagesController < ApplicationController
 
 
   def show
-    default_locale = Rails.configuration.gtdinbox_master_locale
-
-    locale = if params.has_key?(:lang)
-      Locale.find_by_lang_code(params[:lang])
-    else
-      @is_default_locale = true
-      default_locale
-    end
+    locale = get_locale
 
     unless locale
       raise "Undefined locale"

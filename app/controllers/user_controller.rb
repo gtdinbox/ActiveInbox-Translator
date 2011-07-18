@@ -38,6 +38,7 @@ class UserController < ApplicationController
 
   # PUT /users/1
   def update
+    #todo: this should redirect to user#index if this is the page referrer
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
@@ -50,8 +51,8 @@ class UserController < ApplicationController
   # DELETE /users/1
   def destroy
     @user = User.find(params[:id])
-    @user.remove
-    redirect_to(users_url, :notice => "User was successfully removed")
+    @user.destroy
+    redirect_to(user_index_url, :notice => "User was successfully removed")
   end
 
 end
