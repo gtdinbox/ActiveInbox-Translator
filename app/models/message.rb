@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
 
   sync_values_of :name do
 
-    GtdInboxRepo.pull
+    #GtdInboxRepo.pull
     message_filepath = Rails.configuration.gtdinbox_message_file
     message_file = File.open(message_filepath, 'r');
     messages = JSON.parse(message_file.read)
@@ -104,22 +104,32 @@ class Message < ActiveRecord::Base
   # Prepares the data for exporting messages into a zip bundle.
   #
   # export_id - The unique export identifier.
-  # locale    - The language code of the exported locale.
+  # locale    - An locale model instance.
   #
   # Returns:
   #  An array of two value arrays containing the exported local as the first item, and the message.json file handle as the second one.
   #
 
-  def self.export(export_id=Time.now.to_i, locale='en_US')
+  def self.export(export_id=Time.now.to_i, locale=Rails.configuration.gtdinbox_master_locale)
     messages = {}
-    message_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale}-#{export_id}-messages.json"
-    Message.where("deleted = ?", false).each {|record|  messages[record.name] = {:message => record.value}}
+    message_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale.lang_code}-#{export_id}-messages.json"
 
-    file = File.open(message_filepath, 'w')
-    file.write(JSON.pretty_generate(messages))
-    file.close
+    Message.where(
+      :deleted => false,
+      :locale_id => locale.id
 
-    [[locale, file]]
+    ).each {|record|  messages[record.name] = {
+      :message => record.value}
+    }
+
+    unless messages.empty?
+      file = File.open(message_filepath, 'w')
+      file.write(JSON.pretty_generate(messages))
+      file.close
+      [[locale.lang_code, file]]
+    else
+      []
+    end
   end
 
 

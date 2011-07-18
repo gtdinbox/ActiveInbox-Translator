@@ -1,7 +1,8 @@
 <ul class=locale-menu>
   <% for locale in locales
+    active_path = Proc.new {|args| params[:controller] === 'page' ? pages_url(args) : messages_url(args) } 
     active_class = params[:lang] === locale.lang_code ? 'class=active' : ''
-    anchor = link_to(locale.lang_code, messages_path( :lang => locale.lang_code)) 
+    anchor = link_to(locale.lang_code, active_path.call( :lang => locale.lang_code) ) 
   %>
   <li <%=active_class%>><%=anchor%></li>
   <% end %>

@@ -1,0 +1,22 @@
+<table class=messages>
+<% @messages.each do |message_name, message |  %>
+  <tr class=message data-state=<%= state(message) %>>
+    <td class=label>
+         <a href="#<%= message_name%>" 
+            title=<%=message_name%>>
+            <%= truncate(message_name) %>
+         </a>
+       </td>
+       <td class=master-value>
+         <%= message[:master_value]%>
+       </td>
+       <td class=locale-value>
+       <% unless @is_default_locale %>
+         <input type=text value="<%= message[:locale_value] %>"
+               placeholder="Add localized text"
+               <%= "data-message-id=#{message[:id]}" if message.has_key? :id %>>
+        <% end %>
+      </td>
+    </tr>
+ <% end %>
+ </table>

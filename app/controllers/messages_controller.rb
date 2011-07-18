@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
 
-  def show
+  def index
     locale = get_locale
 
     unless locale

@@ -42,7 +42,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
-      redirect_to(root_url, :notice => 'User was successfully updated.')
+      redirect_to(user_index_url, :notice => 'User was successfully updated.')
     else
       render :action => "edit"
     end

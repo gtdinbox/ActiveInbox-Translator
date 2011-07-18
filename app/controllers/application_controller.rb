@@ -35,13 +35,13 @@ class ApplicationController < ActionController::Base
   def get_locale
     default_locale = Rails.configuration.gtdinbox_master_locale
 
-    locale = if params.has_key?(:lang)
+    locale = if params.has_key?(:lang) and params[:lang]
       Locale.find_by_lang_code(params[:lang])
     else
       default_locale
     end
 
-    @is_default_locale = default_locale === locale
+    @is_default_locale = default_locale.id === locale.id
     locale
   end
 
@@ -49,19 +49,26 @@ class ApplicationController < ActionController::Base
 
 
   #
-  # Generate a zip bundle for exporting translated locales
+  # Exports all localised messages and pages, and bundle them into a downloadable zip archive.
   #
   def export_bundle
     export_id=Time.now.to_i
-    export_data = Message.export(export_id).concat(Page.export(export_id))
+    export_data = []
+
+    Locale.all.each do |locale|
+       locale_data = Message.export(export_id, locale).
+                             concat(Page.export(export_id, locale))
+
+       export_data.concat(locale_data) unless locale_data.empty?
+    end
+
     bundler = ZipBundler.new(export_data, export_id)
     bundle_path = bundler.bundle!
     file = File.open(bundle_path, 'r')
     file_content = file.read
     file.close()
 
-    send_data file_content,
-      :type => 'application/zip',
+    send_data file_content, :type => 'application/zip',
       :filename => File.basename(bundle_path),
       :disposition => 'attachment'
   end

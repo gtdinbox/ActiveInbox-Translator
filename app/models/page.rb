@@ -9,7 +9,7 @@ class Page < ActiveRecord::Base
   #
 
   sync_values_of(:name, :content) do
-    GtdInboxRepo.pull
+    #GtdInboxRepo.pull
 
     page_dir = File.dirname(Rails.configuration.gtdinbox_message_file)
     file_paths = Dir["#{page_dir}/*.{html,htm}"]
@@ -37,7 +37,6 @@ class Page < ActiveRecord::Base
       collection.each{|page|output[page.name] = page}
     end
 
-    pp output.keys
     output
   end
 
@@ -49,6 +48,7 @@ class Page < ActiveRecord::Base
       self.save
     else
       locale = Locale.find_by_lang_code(lang_code)
+
       Page.create(
         :name => attributes[:name],
         :content => attributes[:content],
@@ -69,17 +69,17 @@ class Page < ActiveRecord::Base
   #  An array of two value arrays containing the exported local as the first item, and the page's file file handle as the second one.
   #
 
-  def self.export(export_id=Time.now.to_i, locale='en_US')
+  def self.export(export_id=Time.now.to_i, locale=Rails.configuration.gtdinbox_master_locale)
     export_data = []
 
-    Page.where("deleted = ?", false).each do |page|
-      page_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale}-#{export_id}-#{page.name}"
+    Page.where(:deleted => false, :locale_id => locale.id).each do |page|
+      page_filepath = "#{Rails.configuration.gtdinbox_export_tmpdir}/#{locale.lang_code}-#{export_id}-#{page.name}"
 
       file = File.open(page_filepath, 'w')
       file.write(page.content)
       file.close
 
-      export_data.push([locale, file])
+      export_data.push([locale.lang_code, file])
     end
 
     export_data

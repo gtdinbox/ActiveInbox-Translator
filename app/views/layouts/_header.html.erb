@@ -1,7 +1,16 @@
 <% user =  current_user %>
-<div>
+<div id=user-menu>
   <% if user %>
     Logged in as <%= link_to(user.email, edit_account_url(:id => user.id)) %> | 
+    <% if user.is_admin %>
+      <%= link_to("Manage users", user_index_url) %> |
+    <% end %>
     <%= link_to "logout", logout_url, :method => :delete %>
   <% end %>
 </div>
+
+<% if flash[:notice] %>
+  <p class=notice><%= flash[:notice] %></p>
+<% end %>
+
+<%= render 'layouts/page-message-tab' if %w[messages page].include?(params[:controller]) %>

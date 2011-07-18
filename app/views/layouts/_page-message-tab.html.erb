@@ -1,0 +1,7 @@
+<ul class=page-message-tab>
+  <%
+    lang_code = (params.has_key?(:lang) and params[:lang]) ? params[:lang] : Rails.configuration.gtdinbox_master_locale.lang_code
+  %>
+  <li <%= "class=active" if params[:controller] === 'messages' %>><%= link_to("messages", messages_url(:lang => lang_code)) %></li>
+  <li <%= "class=active" if params[:controller] === 'page' %>><%= link_to("pages", pages_url(:lang => lang_code)) %></li>
+</ul>

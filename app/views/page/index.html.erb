@@ -1,4 +1,4 @@
-<h1>Help pages </h1>
+<h1>ActiveInbox Help pages </h1>
 <ul>
   <% @pages.each do |page_name, page| %>
     <% classes = []; classes.push( page.in_sync ? 'in_sync' : 'not_in_sync'); classes.push('translated') if page.locale.lang_code === @locale.lang_code %>

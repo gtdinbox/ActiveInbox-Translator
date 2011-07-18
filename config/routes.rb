@@ -5,7 +5,7 @@ ActiveInboxTranslator::Application.routes.draw do
 
   match 'messages/:lang' => 'messages#create', :via => 'post', :as => 'messages'
   match 'messages/:lang/:id' => 'messages#update', :via => 'put', :as => 'messages'
-  match 'messages(/:lang)' => 'messages#show', :via => 'get', :as => 'messages'
+  match 'messages(/:lang)' => 'messages#index', :via => 'get', :as => 'messages'
 
   match 'pages/:lang/:id/edit' => 'page#edit', :via => 'get', :as => 'page_form'
   match 'pages/:lang/:id' => 'page#update', :via => 'put', :as => 'page_update'
@@ -15,8 +15,8 @@ ActiveInboxTranslator::Application.routes.draw do
   post "login" => "user_session#create", :as => 'login'
   delete "logout" => "user_session#destroy", :as => 'logout'
 
-  get "signup" => "user#new", :as => 'signup'
-  post "signup" => "user#create", :as => 'signup'
+  get "user/new" => "user#new", :as => 'signup'
+  post "user/new" => "user#create", :as => 'signup'
   match "user/:id/edit" => "user#edit", :via => 'get', :as => 'edit_account'
   match "user/:id" => "user#destroy", :via => 'delete', :as => 'user_delete'
   match "user/:id" => "user#update", :via => 'put', :as => 'user'
@@ -24,7 +24,7 @@ ActiveInboxTranslator::Application.routes.draw do
 
   get "export" => "application#export_bundle"
 
-  root :to => 'messages#show', :via => 'get', :lang => 'it'
+  root :to => 'messages#index', :via => 'get', :lang => 'en_US'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
