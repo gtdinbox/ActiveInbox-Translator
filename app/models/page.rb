@@ -22,8 +22,43 @@ class Page < ActiveRecord::Base
     file_contents
   end
 
-  private
+  def self.locale_or_masterlist(lang_code=0)
+    master_locale = Rails.configuration.gtdinbox_master_locale
+    locale = Locale.find_by_lang_code(lang_code)
 
+    output = {}
+
+    #todo: refactor into sql
+    pages_master = Page.where(:locale_id => master_locale.id)
+    pages_locale = locale ? Page.where(:locale_id => locale.id) : []
+
+
+    [pages_master, pages_locale].each do |collection|
+      collection.each{|page|output[page.name] = page}
+    end
+
+    pp output.keys
+    output
+  end
+
+
+  def update_or_translate(lang_code, attributes)
+
+    if lang_code === self.locale.lang_code
+      self.update_attributes(attributes)
+      self.save
+    else
+      locale = Locale.find_by_lang_code(lang_code)
+      Page.create(
+        :name => attributes[:name],
+        :content => attributes[:content],
+        :locale_id => locale.id
+      )
+    end
+  end
+
+
+  private
   #
   # Prepares the data for exporting page files into a locale zip bundle.
   #

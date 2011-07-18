@@ -42,7 +42,6 @@ class ApplicationController < ActionController::Base
     end
 
     @is_default_locale = default_locale === locale
-    debugger
     locale
   end
 

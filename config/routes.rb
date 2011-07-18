@@ -7,9 +7,9 @@ ActiveInboxTranslator::Application.routes.draw do
   match 'messages/:lang/:id' => 'messages#update', :via => 'put', :as => 'messages'
   match 'messages(/:lang)' => 'messages#show', :via => 'get', :as => 'messages'
 
-  match 'pages(/:lang/)' => 'page#index', :via => 'get', :as => 'pages'
-  match 'pages/:id' => 'page#edit', :via => 'get', :as => 'page_form'
-  match 'pages/:id' => 'page#update', :via => 'put', :as => 'page_update'
+  match 'pages/:lang/:id/edit' => 'page#edit', :via => 'get', :as => 'page_form'
+  match 'pages/:lang/:id' => 'page#update', :via => 'put', :as => 'page_update'
+  match 'pages(/:lang)' => 'page#index', :via => 'get', :as => 'pages'
 
   get "login" => "user_session#new", :as => 'login'
   post "login" => "user_session#create", :as => 'login'

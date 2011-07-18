@@ -1,6 +1,7 @@
 <h1>Help pages </h1>
 <ul>
-  <% for page in @pages %>
-    <li><%= link_to(page.name, page_form_url(:lang => @locale.lang_code, :id => page.id)) %></li>
+  <% @pages.each do |page_name, page| %>
+    <% classes = []; classes.push( page.in_sync ? 'in_sync' : 'not_in_sync'); classes.push('translated') if page.locale.lang_code === @locale.lang_code %>
+    <li class="<%= classes.join(' ') %>"><%= link_to(page.name, page_form_url(:lang => @locale.lang_code, :id => page.id)) %></li>
   <% end %>
 </ul>

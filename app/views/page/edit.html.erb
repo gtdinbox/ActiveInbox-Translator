@@ -1,9 +1,8 @@
 <h1>Edit page <code><%= @page.name %></code></h1>
-<%= debug(@is_default_locale) %>
 
 <% form_for(@page, :url => page_update_url, :html => { :method => :put}) do |f| %>
   <%= f.text_area :content, :size => '100x30', :disabled => @is_default_locale %>
+  <%= f.hidden_field :name, :value => @page.name %>
   <br/>
-
-  <%= f.submit %>
+  <%= f.submit unless @is_default_locale%>
 <% end %>
