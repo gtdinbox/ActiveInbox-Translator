@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110716113246) do
+ActiveRecord::Schema.define(:version => 20110719142045) do
 
   create_table "locales", :force => true do |t|
     t.string   "name"
