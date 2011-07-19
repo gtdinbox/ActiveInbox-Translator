@@ -3,7 +3,7 @@ namespace :gtdinbox do
   desc "Clone ActiveInbox plugin code from the Github repository"
 
   task :clone_repo => :environment do
-    unless GtdInboxRepo.exist?
+    unless GtdInboxRepo.exists?
       GtdInboxRepo.clone
     end
   end
