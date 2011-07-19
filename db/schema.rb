@@ -10,44 +10,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110716113246) do
-
-  create_table "locales", :force => true do |t|
-    t.string   "name"
-    t.string   "lang_code"
-    t.boolean  "is_master"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "messages", :force => true do |t|
-    t.string   "name"
-    t.string   "value"
-    t.boolean  "deleted",    :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "locale_id"
-    t.boolean  "in_sync",    :default => true
-  end
-
-  create_table "pages", :force => true do |t|
-    t.string   "name"
-    t.text     "content"
-    t.boolean  "deleted",    :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "locale_id"
-    t.boolean  "in_sync",    :default => true
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "email",                                 :null => false
-    t.string   "name"
-    t.string   "encrypted_password",                    :null => false
-    t.string   "salt",                                  :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "is_admin",           :default => false
-  end
+ActiveRecord::Schema.define(:version => 0) do
 
 end
