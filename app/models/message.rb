@@ -118,8 +118,8 @@ class Message < ActiveRecord::Base
       :deleted => false,
       :locale_id => locale.id
 
-    ).each {|record|  messages[record.name] = {
-      :message => record.value}
+    ).each {|record|
+      messages[record.name] = {:message => record.value} unless record.value.strip.empty?
     }
 
     unless messages.empty?
