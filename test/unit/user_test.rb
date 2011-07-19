@@ -17,8 +17,8 @@ class UserTest < ActiveSupport::TestCase
     2.times do |n|
       user_fixture(:email => "user#{n}@mailinator.com").save
     end
-    assert User.authenticate("user1@mailinator.com", 'blabla'), "Should authenticate user"
-    assert User.authenticate("user1@mailinator.com", 'blablabzzz') === false, "Should not authenticate user"
+    assert_not_nil User.authenticate("user1@mailinator.com", 'blabla'), "Should authenticate user"
+    assert_nil User.authenticate("user1@mailinator.com", 'blablabzzz'), "Should not authenticate user"
   end
 
 
