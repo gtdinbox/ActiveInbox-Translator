@@ -13,17 +13,16 @@ module MessageHelper
   #
   def state(message)
     state = nil
+    default_lang_code = Rails.configuration.gtdinbox_master_locale.lang_code
 
-    if message[:locale_value] and message[:in_sync]
-      state = 'ok'
+    if (message[:locale_value] and message[:in_sync]) or params[:lang] == default_lang_code
+      return 'ok'
     end
     if message[:locale_value] and not message[:in_sync]
-      state = 'needs_sync'
+      return 'needs_sync'
     end
     if not message[:locale_value]
-      state = 'missing'
+      return 'missing'
     end
-
-    state
   end
 end

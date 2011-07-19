@@ -36,8 +36,7 @@ class Message < ActiveRecord::Base
   def self.locale_with_masterlist(locale_id)
     @messages = {}
     master_locale = Rails.configuration.gtdinbox_master_locale
-
-    master_list = Message.select("name, value").
+    master_list = Message.select("name, value, in_sync, locale_id").
                           where("locale_id = ?", master_locale.id)
 
 
@@ -45,7 +44,8 @@ class Message < ActiveRecord::Base
       @messages[message.name] = {
         :master_value => message.value,
         :locale_value => nil,
-        :in_sync => nil
+        :locale_id => message.locale_id,
+        :in_sync => message.in_sync
       }
     end
 
@@ -54,6 +54,7 @@ class Message < ActiveRecord::Base
                             where("locale_id = ?", locale_id)
 
       locale_list.each do |message|
+        @messages[message.name][:locale_id] = locale_id
         @messages[message.name][:locale_value] = message.value
         @messages[message.name][:in_sync] = message.in_sync
         @messages[message.name][:id] = message.id

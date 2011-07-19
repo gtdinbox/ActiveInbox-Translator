@@ -9,8 +9,9 @@ jQuery(function ($) {
         },
         data = ajaxSettings.data = {};
 
-    data.name = element.parents('tr')
-                       .find('td:nth(0) a').text().trim();
+    data.name = element
+      .parents('tr')
+      .find('td:nth(0) a').text().trim();
 
     data.value = element.val();
     data.id = element.attr('data-message-id');
@@ -22,7 +23,9 @@ jQuery(function ($) {
     }
 
     ajaxSettings.success = function (data) {
-      var tr = element.parent('tr');
+      var tr = element.parents('tr');
+      tr.attr('data-state', 'ok');
+      tr.next().find('input').focus();
     };
 
     $.ajax(ajaxSettings);

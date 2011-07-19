@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
 
     if message
        message.value = params[:value]
+       message.in_sync = true
        message.save
       else
        rise "Record not found"
