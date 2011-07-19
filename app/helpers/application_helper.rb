@@ -19,7 +19,7 @@ module ApplicationHelper
   def locale_menu ()
     default_locale = Rails.configuration.gtdinbox_master_locale
     lang_code = params.has_key?(:lang) ? params[:lang] : default_locale.lang_code
-    locales = Locale.where("lang_code IS NOT ?", default_locale.lang_code)
+    locales = Locale.where("lang_code != ?", default_locale.lang_code)
     list_items = []
 
     locales.unshift(default_locale)

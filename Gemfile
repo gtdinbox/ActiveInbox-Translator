@@ -2,11 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
-#avoids running into problems when running heroku rake db:migrate
-gem "rake", "0.8.7"
-
-
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
