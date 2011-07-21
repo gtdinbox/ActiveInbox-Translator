@@ -93,7 +93,7 @@ class Message < ActiveRecord::Base
 
 
     percentage = (total_locale*100)/total_master
-    status = if 65..100.include?(percentage)
+    status = if (65..100).include?(percentage)
         "nearly_complete"
       elsif percentage == 100
         "complete"
