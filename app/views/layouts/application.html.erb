@@ -9,7 +9,8 @@
 <body>
  <div id=wrapper>
   <%= render :partial => 'layouts/locale-menu', :locals => {
-    :locales => locale_menu
+    :locales => locale_menu,
+    :master_count => master_locale_count
   } %>
 
   <%= render 'layouts/header' %>

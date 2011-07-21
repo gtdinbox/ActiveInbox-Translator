@@ -1,9 +1,13 @@
 <ul class=locale-menu>
   <% for locale in locales
+    # link to locale page listings if the current controller is page, otherwise link to message lists.
     active_path = Proc.new {|args| params[:controller] === 'page' ? pages_url(args) : messages_url(args) } 
     active_class = params[:lang] === locale.lang_code ? 'class=active' : ''
-    anchor = link_to(locale.lang_code, active_path.call( :lang => locale.lang_code) ) 
+    anchor = link_to(locale.lang_code, active_path.call( :lang => locale.lang_code) )
+    # get locale stats
+    pp master_count
+    stats = Message.translation_stats(locale, master_count)
   %>
-  <li <%=active_class%>><%=anchor%></li>
+  <li <%=active_class%> data-percentage=<%=stats[:percentage]%> data-completeness=<%=stats[:status]%>><%=anchor%></li>
   <% end %>
 </ul>

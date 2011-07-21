@@ -24,4 +24,11 @@ module ApplicationHelper
 
     locales.unshift(default_locale)
   end
+
+
+  # counts the number of messages in the master locale
+  def master_locale_count
+    default_locale = Rails.configuration.gtdinbox_master_locale
+    Message.where(:locale_id => default_locale.id).count
+  end
 end

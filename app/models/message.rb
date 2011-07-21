@@ -71,33 +71,43 @@ class Message < ActiveRecord::Base
   #
   # Calculates the percentage of translated messages.
   #
-  # locale - An instance of the current Locale model.
+  # locale       - An instance of the current Locale model.
+  # master_count - A value to be used as master count (allows to skuip a sql query, optional)
   #
-  # Returns a hash containing the total number of entries
-  # in the default locale, the total number of entries in the 
+  # Returns a hash containing statistics about how many 
+  # messages have been translated within that specific locale.
   #
 
-  def self.translation_stats(locale)
+  def self.translation_stats(locale, total_master=nil)
     master_locale = Rails.configuration.gtdinbox_master_locale
 
-    total_master, total_locale = [
-      Message.where(
-        :locale_id => master_locale.id,
-        :deleted => false
-      ).count,
+    total_master ||= Message.where(
+      :locale_id => master_locale.id,
+      :deleted => false
+    ).count
 
-      Message.where(
+    total_locale = Message.where(
         :locale_id => locale.id,
         :deleted => false
-      ).count
-    ]
+    ).count
+
+
+    percentage = (total_locale*100)/total_master
+    status = if 65..100.include?(percentage)
+        "nearly_complete"
+      elsif percentage == 100
+        "complete"
+      else
+        "incomplete"
+    end
 
     {:lang_code => locale.lang_code,
      :locale_id => locale.id,
      :master_count => total_master,
      :locale_count => total_locale,
-     :fraction => total_master / total_locale,
-     :percentage => "#{(total_locale*100)/total_master}%"
+     :fraction => total_master / (total_locale + 1),
+     :percentage => "#{percentage}%",
+     :status => status
     }
   end
 
