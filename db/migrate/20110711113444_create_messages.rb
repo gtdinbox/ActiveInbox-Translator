@@ -2,7 +2,7 @@ class CreateMessages < ActiveRecord::Migration
   def self.up
     create_table :messages do |t|
       t.string :name
-      t.string :value
+      t.text :value
       t.boolean :deleted, :default => false
       t.timestamps
     end
